@@ -12,6 +12,11 @@ namespace Car_v3
 {
     public partial class Login : Form
     {
+        public static string ID_LEVEL = "";
+        public static string ID_STAFF = "";
+
+        DataTable tb = new DataTable();
+        help help = new help();
         public Login()
         {
             InitializeComponent();
@@ -19,9 +24,74 @@ namespace Car_v3
 
         private void btn_dangNhap_Click(object sender, EventArgs e)
         {
-            TrangChu newTrangChu = new TrangChu();
-            newTrangChu.Show();
-            this.Hide();
+            ID_LEVEL = getIDLevel(tb_tenDangNhap.Text, tb_matKhau.Text);
+            ID_STAFF = getIDStaff(tb_tenDangNhap.Text, tb_matKhau.Text);
+
+            if (ID_LEVEL != "" && ID_STAFF !="")
+            {
+                TrangChu main = new TrangChu();
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");
+            }
+        }
+
+        private string getIDLevel(string username, string pass)
+        {
+            string id = "";
+            try
+            {
+                help.Mo_KN_CSDL();
+                string str = "SELECT * FROM nhanVien WHERE emailnhanvien ='" + tb_tenDangNhap.Text.Trim() + "' and password='" + tb_matKhau.Text.Trim() + "'";
+                tb = help.LayBang(str);
+                if (tb != null)
+                {
+                    foreach (DataRow dr in tb.Rows)
+                    {
+                        id = dr["maPhanQuyen"].ToString();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
+            }
+            finally
+            {
+                help.DongKN();
+            }
+            return id;
+        }
+        private string getIDStaff(string username, string pass)
+        {
+            string id = "";
+            try
+            {
+                help.Mo_KN_CSDL();
+                string str = "SELECT * FROM nhanVien WHERE emailnhanvien ='" + tb_tenDangNhap.Text.Trim() + "' and password='" + tb_matKhau.Text.Trim() + "'";
+                tb = help.LayBang(str);
+                if (tb != null)
+                {
+                    foreach (DataRow dr in tb.Rows)
+                    {
+                        id = dr["maNhanVien"].ToString();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
+            }
+            finally
+            {
+                help.DongKN();
+            }
+            return id;
         }
     }
 }

@@ -61,6 +61,22 @@ namespace Car_v3
             return bang;
 
         }
+        public int Checkper()
+        {
+            string code = Login.ID_LEVEL;
+            int check = 1;
+            if ("1" == code)
+            {
+                check = 1;
+            }
+            else if ("2" == code)
+            {
+                check = 2;
+            }
+            else
+                check = 3;
+            return check;
+        }
         public void DongKN()
         {
             kn.Close();
