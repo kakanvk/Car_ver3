@@ -38,6 +38,7 @@
             this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // gunaButton2
@@ -53,7 +54,7 @@
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(257, 265);
+            this.gunaButton2.Location = new System.Drawing.Point(257, 312);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -78,7 +79,7 @@
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(378, 265);
+            this.gunaButton1.Location = new System.Drawing.Point(378, 312);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -117,7 +118,7 @@
             this.gunaTextBox4.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox4.Location = new System.Drawing.Point(192, 187);
+            this.gunaTextBox4.Location = new System.Drawing.Point(192, 239);
             this.gunaTextBox4.Name = "gunaTextBox4";
             this.gunaTextBox4.PasswordChar = '\0';
             this.gunaTextBox4.SelectedText = "";
@@ -128,7 +129,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(25, 195);
+            this.gunaLabel4.Location = new System.Drawing.Point(25, 247);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(100, 25);
             this.gunaLabel4.TabIndex = 11;
@@ -143,7 +144,7 @@
             this.gunaTextBox3.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox3.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox3.Location = new System.Drawing.Point(192, 132);
+            this.gunaTextBox3.Location = new System.Drawing.Point(192, 184);
             this.gunaTextBox3.Name = "gunaTextBox3";
             this.gunaTextBox3.PasswordChar = '\0';
             this.gunaTextBox3.SelectedText = "";
@@ -154,7 +155,7 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(25, 140);
+            this.gunaLabel3.Location = new System.Drawing.Point(25, 192);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(85, 25);
             this.gunaLabel3.TabIndex = 12;
@@ -169,7 +170,7 @@
             this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(192, 79);
+            this.gunaTextBox2.Location = new System.Drawing.Point(192, 131);
             this.gunaTextBox2.Name = "gunaTextBox2";
             this.gunaTextBox2.PasswordChar = '\0';
             this.gunaTextBox2.SelectedText = "";
@@ -180,7 +181,7 @@
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(25, 87);
+            this.gunaLabel2.Location = new System.Drawing.Point(25, 139);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(133, 25);
             this.gunaLabel2.TabIndex = 13;
@@ -196,11 +197,24 @@
             this.gunaLabel1.TabIndex = 14;
             this.gunaLabel1.Text = "Tên sản phẩm";
             // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.gunaLabel7.Location = new System.Drawing.Point(289, 75);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(183, 25);
+            this.gunaLabel7.TabIndex = 22;
+            this.gunaLabel7.Text = "Thêm sản phẩm khác";
+            // 
             // ChiTietPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 332);
+            this.ClientSize = new System.Drawing.Size(507, 381);
+            this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaButton2);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaComboBox1);
@@ -230,5 +244,6 @@
         private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
     }
 }

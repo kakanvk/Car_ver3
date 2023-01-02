@@ -1,6 +1,6 @@
 ﻿namespace Car_v3
 {
-    partial class KhachHang
+    partial class Xe
     {
         /// <summary>
         /// Required designer variable.
@@ -68,13 +68,13 @@
             this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.Location = new System.Drawing.Point(34, 75);
+            this.gunaDataGridView1.Location = new System.Drawing.Point(29, 62);
             this.gunaDataGridView1.Name = "gunaDataGridView1";
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.RowHeadersWidth = 62;
             this.gunaDataGridView1.RowTemplate.Height = 28;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(777, 338);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(982, 338);
             this.gunaDataGridView1.TabIndex = 31;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -112,7 +112,7 @@
             this.gunaButton4.Image = null;
             this.gunaButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(484, 437);
+            this.gunaButton4.Location = new System.Drawing.Point(479, 424);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -137,7 +137,7 @@
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(357, 437);
+            this.gunaButton2.Location = new System.Drawing.Point(352, 424);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -162,7 +162,7 @@
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(171, 437);
+            this.gunaButton3.Location = new System.Drawing.Point(166, 424);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -187,7 +187,7 @@
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(34, 437);
+            this.gunaButton1.Location = new System.Drawing.Point(29, 424);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -203,25 +203,25 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(29, 32);
+            this.gunaLabel1.Location = new System.Drawing.Point(24, 19);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(236, 30);
+            this.gunaLabel1.Size = new System.Drawing.Size(144, 30);
             this.gunaLabel1.TabIndex = 26;
-            this.gunaLabel1.Text = "Danh sách khách hàng";
+            this.gunaLabel1.Text = "Danh sách xe";
             // 
-            // KhachHang
+            // Xe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 513);
+            this.ClientSize = new System.Drawing.Size(1036, 503);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.gunaButton4);
             this.Controls.Add(this.gunaButton2);
             this.Controls.Add(this.gunaButton3);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaLabel1);
-            this.Name = "KhachHang";
-            this.Text = "KhachHang";
+            this.Name = "Xe";
+            this.Text = "Xe";
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
