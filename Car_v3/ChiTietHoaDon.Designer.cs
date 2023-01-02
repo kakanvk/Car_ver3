@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
@@ -43,23 +42,11 @@
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaTextBox5 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaTextBox6 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaTextBox7 = new Guna.UI.WinForms.GunaTextBox();
             this.SuspendLayout();
-            // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gunaLabel7.Location = new System.Drawing.Point(327, 66);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(183, 25);
-            this.gunaLabel7.TabIndex = 33;
-            this.gunaLabel7.Text = "Thêm sản phẩm khác";
             // 
             // gunaButton2
             // 
@@ -74,7 +61,7 @@
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(295, 550);
+            this.gunaButton2.Location = new System.Drawing.Point(313, 497);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -99,7 +86,7 @@
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(416, 550);
+            this.gunaButton1.Location = new System.Drawing.Point(434, 497);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -122,7 +109,7 @@
             this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
             this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Location = new System.Drawing.Point(230, 20);
+            this.gunaComboBox1.Location = new System.Drawing.Point(248, 29);
             this.gunaComboBox1.Name = "gunaComboBox1";
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -138,7 +125,7 @@
             this.gunaTextBox4.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox4.Location = new System.Drawing.Point(230, 467);
+            this.gunaTextBox4.Location = new System.Drawing.Point(248, 189);
             this.gunaTextBox4.Name = "gunaTextBox4";
             this.gunaTextBox4.PasswordChar = '\0';
             this.gunaTextBox4.SelectedText = "";
@@ -149,11 +136,11 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(24, 482);
+            this.gunaLabel4.Location = new System.Drawing.Point(25, 197);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(100, 25);
+            this.gunaLabel4.Size = new System.Drawing.Size(130, 25);
             this.gunaLabel4.TabIndex = 23;
-            this.gunaLabel4.Text = "Thành tiền";
+            this.gunaLabel4.Text = "Phí đăng kiểm";
             // 
             // gunaTextBox3
             // 
@@ -164,7 +151,7 @@
             this.gunaTextBox3.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox3.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox3.Location = new System.Drawing.Point(230, 175);
+            this.gunaTextBox3.Location = new System.Drawing.Point(248, 134);
             this.gunaTextBox3.Name = "gunaTextBox3";
             this.gunaTextBox3.PasswordChar = '\0';
             this.gunaTextBox3.SelectedText = "";
@@ -175,11 +162,11 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(24, 190);
+            this.gunaLabel3.Location = new System.Drawing.Point(25, 142);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(75, 25);
+            this.gunaLabel3.Size = new System.Drawing.Size(127, 25);
             this.gunaLabel3.TabIndex = 24;
-            this.gunaLabel3.Text = "Giá bán";
+            this.gunaLabel3.Text = "Thuế trước bạ";
             // 
             // gunaTextBox2
             // 
@@ -190,7 +177,7 @@
             this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(230, 122);
+            this.gunaTextBox2.Location = new System.Drawing.Point(248, 77);
             this.gunaTextBox2.Name = "gunaTextBox2";
             this.gunaTextBox2.PasswordChar = '\0';
             this.gunaTextBox2.SelectedText = "";
@@ -201,7 +188,7 @@
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(24, 137);
+            this.gunaLabel2.Location = new System.Drawing.Point(25, 85);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(128, 25);
             this.gunaLabel2.TabIndex = 25;
@@ -211,7 +198,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(24, 32);
+            this.gunaLabel1.Location = new System.Drawing.Point(25, 34);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(125, 25);
             this.gunaLabel1.TabIndex = 26;
@@ -221,11 +208,11 @@
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(24, 249);
+            this.gunaLabel5.Location = new System.Drawing.Point(25, 360);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(127, 25);
+            this.gunaLabel5.Size = new System.Drawing.Size(77, 25);
             this.gunaLabel5.TabIndex = 24;
-            this.gunaLabel5.Text = "Thuế trước bạ";
+            this.gunaLabel5.Text = "Đơn giá";
             // 
             // gunaTextBox1
             // 
@@ -236,7 +223,7 @@
             this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(230, 234);
+            this.gunaTextBox1.Location = new System.Drawing.Point(248, 352);
             this.gunaTextBox1.Name = "gunaTextBox1";
             this.gunaTextBox1.PasswordChar = '\0';
             this.gunaTextBox1.SelectedText = "";
@@ -247,11 +234,11 @@
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(24, 304);
+            this.gunaLabel6.Location = new System.Drawing.Point(25, 415);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(130, 25);
-            this.gunaLabel6.TabIndex = 24;
-            this.gunaLabel6.Text = "Phí đăng kiểm";
+            this.gunaLabel6.Size = new System.Drawing.Size(100, 25);
+            this.gunaLabel6.TabIndex = 23;
+            this.gunaLabel6.Text = "Thành tiền";
             // 
             // gunaTextBox5
             // 
@@ -262,22 +249,22 @@
             this.gunaTextBox5.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox5.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox5.Location = new System.Drawing.Point(230, 289);
+            this.gunaTextBox5.Location = new System.Drawing.Point(248, 407);
             this.gunaTextBox5.Name = "gunaTextBox5";
             this.gunaTextBox5.PasswordChar = '\0';
             this.gunaTextBox5.SelectedText = "";
             this.gunaTextBox5.Size = new System.Drawing.Size(280, 40);
-            this.gunaTextBox5.TabIndex = 28;
+            this.gunaTextBox5.TabIndex = 27;
             // 
-            // gunaLabel8
+            // gunaLabel7
             // 
-            this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.Location = new System.Drawing.Point(24, 362);
-            this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(113, 25);
-            this.gunaLabel8.TabIndex = 24;
-            this.gunaLabel8.Text = "Bảo hiểm xe";
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.Location = new System.Drawing.Point(25, 252);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(113, 25);
+            this.gunaLabel7.TabIndex = 23;
+            this.gunaLabel7.Text = "Bảo hiểm xe";
             // 
             // gunaTextBox6
             // 
@@ -288,22 +275,22 @@
             this.gunaTextBox6.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox6.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox6.Location = new System.Drawing.Point(230, 347);
+            this.gunaTextBox6.Location = new System.Drawing.Point(248, 244);
             this.gunaTextBox6.Name = "gunaTextBox6";
             this.gunaTextBox6.PasswordChar = '\0';
             this.gunaTextBox6.SelectedText = "";
             this.gunaTextBox6.Size = new System.Drawing.Size(280, 40);
-            this.gunaTextBox6.TabIndex = 28;
+            this.gunaTextBox6.TabIndex = 27;
             // 
-            // gunaLabel9
+            // gunaLabel8
             // 
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.Location = new System.Drawing.Point(24, 419);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(185, 25);
-            this.gunaLabel9.TabIndex = 24;
-            this.gunaLabel9.Text = "Phí bảo trì đường bộ";
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.Location = new System.Drawing.Point(25, 306);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(185, 25);
+            this.gunaLabel8.TabIndex = 23;
+            this.gunaLabel8.Text = "Phí bảo trì đường bộ";
             // 
             // gunaTextBox7
             // 
@@ -314,31 +301,30 @@
             this.gunaTextBox7.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaTextBox7.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.gunaTextBox7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox7.Location = new System.Drawing.Point(230, 404);
+            this.gunaTextBox7.Location = new System.Drawing.Point(248, 298);
             this.gunaTextBox7.Name = "gunaTextBox7";
             this.gunaTextBox7.PasswordChar = '\0';
             this.gunaTextBox7.SelectedText = "";
             this.gunaTextBox7.Size = new System.Drawing.Size(280, 40);
-            this.gunaTextBox7.TabIndex = 28;
+            this.gunaTextBox7.TabIndex = 27;
             // 
             // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 622);
-            this.Controls.Add(this.gunaLabel7);
+            this.ClientSize = new System.Drawing.Size(562, 566);
             this.Controls.Add(this.gunaButton2);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaComboBox1);
-            this.Controls.Add(this.gunaTextBox4);
-            this.Controls.Add(this.gunaLabel4);
-            this.Controls.Add(this.gunaTextBox7);
-            this.Controls.Add(this.gunaTextBox6);
-            this.Controls.Add(this.gunaLabel9);
-            this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaTextBox5);
             this.Controls.Add(this.gunaLabel6);
+            this.Controls.Add(this.gunaTextBox7);
+            this.Controls.Add(this.gunaTextBox6);
+            this.Controls.Add(this.gunaTextBox4);
             this.Controls.Add(this.gunaTextBox1);
+            this.Controls.Add(this.gunaLabel8);
+            this.Controls.Add(this.gunaLabel7);
+            this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaTextBox3);
             this.Controls.Add(this.gunaLabel3);
@@ -353,8 +339,6 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
@@ -369,9 +353,9 @@
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox7;
     }
 }

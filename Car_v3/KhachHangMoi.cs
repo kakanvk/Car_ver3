@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Car_v3
 {
-    public partial class HoaDonMoi : Form
+    public partial class KhachHangMoi : Form
     {
-        public HoaDonMoi()
+        public KhachHangMoi()
         {
             InitializeComponent();
         }
 
-        private void gunaGroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaLabel6_Click(object sender, EventArgs e)
+        private void gunaLabel1_Click(object sender, EventArgs e)
         {
 
         }

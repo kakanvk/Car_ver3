@@ -58,6 +58,42 @@
       <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="help.cs" />
+    <Compile Include="HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonMoi.Designer.cs">
+      <DependentUpon>HoaDonMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHangMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHangMoi.Designer.cs">
+      <DependentUpon>KhachHangMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiXe.Designer.cs">
+      <DependentUpon>LoaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiXeMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiXeMoi.Designer.cs">
+      <DependentUpon>LoaiXeMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,8 +144,38 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xe.Designer.cs">
+      <DependentUpon>Xe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XeMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XeMoi.Designer.cs">
+      <DependentUpon>XeMoi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChiTietPhieuNhap.resx">
       <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonMoi.resx">
+      <DependentUpon>HoaDonMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHangMoi.resx">
+      <DependentUpon>KhachHangMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiXe.resx">
+      <DependentUpon>LoaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiXeMoi.resx">
+      <DependentUpon>LoaiXeMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -143,6 +209,12 @@
     </Compile>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xe.resx">
+      <DependentUpon>Xe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XeMoi.resx">
+      <DependentUpon>XeMoi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
