@@ -168,7 +168,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_nhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_nhanVien.ColumnHeadersHeight = 4;
+            this.dgv_nhanVien.ColumnHeadersHeight = 30;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -183,7 +183,7 @@
             this.dgv_nhanVien.Name = "dgv_nhanVien";
             this.dgv_nhanVien.RowHeadersVisible = false;
             this.dgv_nhanVien.RowHeadersWidth = 62;
-            this.dgv_nhanVien.RowTemplate.Height = 28;
+            this.dgv_nhanVien.RowTemplate.Height = 50;
             this.dgv_nhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_nhanVien.Size = new System.Drawing.Size(820, 307);
             this.dgv_nhanVien.TabIndex = 13;
@@ -200,13 +200,13 @@
             this.dgv_nhanVien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgv_nhanVien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv_nhanVien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_nhanVien.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgv_nhanVien.ThemeStyle.HeaderStyle.Height = 30;
             this.dgv_nhanVien.ThemeStyle.ReadOnly = false;
             this.dgv_nhanVien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_nhanVien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_nhanVien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgv_nhanVien.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_nhanVien.ThemeStyle.RowsStyle.Height = 28;
+            this.dgv_nhanVien.ThemeStyle.RowsStyle.Height = 50;
             this.dgv_nhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_nhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_nhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nhanVien_CellClick);

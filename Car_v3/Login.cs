@@ -26,8 +26,17 @@ namespace Car_v3
         {
             ID_LEVEL = getIDLevel(tb_tenDangNhap.Text, tb_matKhau.Text);
             ID_STAFF = getIDStaff(tb_tenDangNhap.Text, tb_matKhau.Text);
-
-            if (ID_LEVEL != "" && ID_STAFF !="")
+            if (tb_tenDangNhap.Text == "")
+            {
+                MessageBox.Show("Chưa nhập email !");
+                tb_tenDangNhap.Focus();
+             }
+            else if(tb_matKhau.Text == "") 
+            {
+                MessageBox.Show("Chưa nhập mật khẩu");
+                tb_matKhau.Focus();
+            }
+            else if (ID_LEVEL != "" && ID_STAFF !="")
             {
                 TrangChu main = new TrangChu();
                 main.Show();
