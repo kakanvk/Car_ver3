@@ -22,5 +22,10 @@ namespace Car_v3
             ChiTietPhieuNhap phieuNhap = new ChiTietPhieuNhap();
             phieuNhap.Show();
         }
+
+        private void PhieuNhapMoi_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
