@@ -12,6 +12,7 @@ namespace Car_v3
 {
     public partial class TrangChu : Form
     {
+        help help = new help();
         public TrangChu()
         {
             InitializeComponent();
@@ -27,6 +28,27 @@ namespace Car_v3
         {
             PhieuNhap newPN = new PhieuNhap();
             newPN.Show();
+        }
+
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+            if (help.Checkper() !=3){ }
+            else
+            {
+                Login login = new Login();
+                login.ShowDialog();
+            }
+        }
+
+        private void btn_nhanVien_Click(object sender, EventArgs e)
+        {
+            if (help.Checkper() == 2)
+            {
+                NhanVien nhanVien = new NhanVien();
+                nhanVien.Show();
+            }
+            else
+                MessageBox.Show("Chức năng này không giành cho bạn !");
         }
     }
 }
