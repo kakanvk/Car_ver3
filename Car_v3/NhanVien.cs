@@ -14,6 +14,7 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
+
         public NhanVien()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace Car_v3
 
         
 
-        void HienThiDL()
+        public void HienThiDL()
         {
 
             string str = "select maNhanVien , tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen";
@@ -42,12 +43,15 @@ namespace Car_v3
             dgv_nhanVien.AllowUserToAddRows = false;
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+
+
         public static int id = 0;
         private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
 
             dgv_nhanVien.CurrentRow.Selected = true;
+
 
            id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
            
@@ -57,14 +61,19 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            NhanVienMoi nhanVienMoi = new NhanVienMoi();
+            
+
+            NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
+            //this.Hide();
             nhanVienMoi.ShowDialog();
+            
         }
 
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
-            NhanVienMoi nhanVienMoi = new NhanVienMoi();
-            nhanVienMoi.Show();
+            NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
+            //this.Hide();
+            nhanVienMoi.ShowDialog();
         }
     }
 }

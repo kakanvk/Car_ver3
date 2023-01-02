@@ -119,7 +119,7 @@
             this.ns_nhanVien.OnPressedColor = System.Drawing.Color.Black;
             this.ns_nhanVien.Size = new System.Drawing.Size(280, 40);
             this.ns_nhanVien.TabIndex = 26;
-            this.ns_nhanVien.Text = "01-Jan-23";
+            this.ns_nhanVien.Text = "1/1/2023";
             this.ns_nhanVien.Value = new System.DateTime(2023, 1, 1, 15, 43, 53, 781);
             // 
             // tb_matKhau

@@ -22,31 +22,7 @@ namespace Car_v3
             InitializeComponent();
         }
 
-        private void btn_dangNhap_Click(object sender, EventArgs e)
-        {
-            ID_LEVEL = getIDLevel(tb_tenDangNhap.Text, tb_matKhau.Text);
-            ID_STAFF = getIDStaff(tb_tenDangNhap.Text, tb_matKhau.Text);
-            if (tb_tenDangNhap.Text == "")
-            {
-                MessageBox.Show("Chưa nhập email !");
-                tb_tenDangNhap.Focus();
-             }
-            else if(tb_matKhau.Text == "") 
-            {
-                MessageBox.Show("Chưa nhập mật khẩu");
-                tb_matKhau.Focus();
-            }
-            else if (ID_LEVEL != "" && ID_STAFF !="")
-            {
-                TrangChu main = new TrangChu();
-                main.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");
-            }
-        }
+        
 
         private string getIDLevel(string username, string pass)
         {
@@ -101,6 +77,32 @@ namespace Car_v3
                 help.DongKN();
             }
             return id;
+        }
+
+        private void btn_dangNhap_Click(object sender, EventArgs e)
+        {
+            ID_LEVEL = getIDLevel(tb_tenDangNhap.Text, tb_matKhau.Text);
+            ID_STAFF = getIDStaff(tb_tenDangNhap.Text, tb_matKhau.Text);
+            if (tb_tenDangNhap.Text == "")
+            {
+                MessageBox.Show("Chưa nhập email !");
+                tb_tenDangNhap.Focus();
+            }
+            else if (tb_matKhau.Text == "")
+            {
+                MessageBox.Show("Chưa nhập mật khẩu");
+                tb_matKhau.Focus();
+            }
+            else if (ID_LEVEL != "" && ID_STAFF != "")
+            {
+                TrangChu main = new TrangChu();
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");
+            }
         }
     }
 }
