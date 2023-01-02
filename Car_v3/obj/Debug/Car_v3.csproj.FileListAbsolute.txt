@@ -19,3 +19,23 @@ C:\Ka Project\Car_v3\Car_v3\obj\Debug\Car_v3.csproj.CoreCompileInputs.cache
 C:\Ka Project\Car_v3\Car_v3\obj\Debug\Car_v3.csproj.CopyComplete
 C:\Ka Project\Car_v3\Car_v3\obj\Debug\Car_v3.exe
 C:\Ka Project\Car_v3\Car_v3\obj\Debug\Car_v3.pdb
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\bin\Debug\Car_v3.exe.config
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\bin\Debug\Car_v3.exe
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\bin\Debug\Car_v3.pdb
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.AssemblyReference.cache
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.SuggestedBindingRedirects.cache
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.ChiTietPhieuNhap.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.Login.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.NhanVien.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.NhanVienMoi.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.NSX.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.NSXMoi.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.PhieuNhap.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.PhieuNhapMoi.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.Properties.Resources.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.TrangChu.resources
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.GenerateResource.cache
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.CoreCompileInputs.cache
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.CopyComplete
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.exe
+C:\Users\LN\Documents\GitHub\Car_ver3\Car_v3\obj\Debug\Car_v3.pdb
