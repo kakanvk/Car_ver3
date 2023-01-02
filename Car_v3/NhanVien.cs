@@ -30,25 +30,41 @@ namespace Car_v3
 
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-            NhanVienMoi nhanVienMoi = new NhanVienMoi();
-            nhanVienMoi.ShowDialog();
-        }
+        
 
         void HienThiDL()
         {
 
-            string str = "select maNhanVien as 'Mã Nhân Viên', tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen";
+            string str = "select maNhanVien , tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen";
             //str = "select a.MANHANVIEN , B.TENPHANQUYEN FROM NHANVIEN AS a ,PHANQUYEN AS b where a.MAPHANQUYEN = b.MAPHANQUYEN;";
             tb = help.LayBang(str);
             dgv_nhanVien.DataSource = tb;
             dgv_nhanVien.AllowUserToAddRows = false;
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+        public static int id = 0;
         private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
 
+            dgv_nhanVien.CurrentRow.Selected = true;
+
+           id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
+           
+        }
+
+        
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            NhanVienMoi nhanVienMoi = new NhanVienMoi();
+            nhanVienMoi.ShowDialog();
+        }
+
+        private void btn_chiTiet_Click(object sender, EventArgs e)
+        {
+            NhanVienMoi nhanVienMoi = new NhanVienMoi();
+            nhanVienMoi.Show();
         }
     }
 }

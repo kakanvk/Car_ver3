@@ -31,115 +31,116 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_xoa = new Guna.UI.WinForms.GunaButton();
+            this.btn_sua = new Guna.UI.WinForms.GunaButton();
+            this.btn_chiTiet = new Guna.UI.WinForms.GunaButton();
+            this.btn_them = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgv_nhanVien = new Guna.UI.WinForms.GunaDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanVien)).BeginInit();
             this.SuspendLayout();
             // 
-            // gunaButton4
+            // btn_xoa
             // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(476, 419);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Size = new System.Drawing.Size(107, 42);
-            this.gunaButton4.TabIndex = 16;
-            this.gunaButton4.Text = "Xoá";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.AnimationHoverSpeed = 0.07F;
+            this.btn_xoa.AnimationSpeed = 0.03F;
+            this.btn_xoa.BaseColor = System.Drawing.Color.Silver;
+            this.btn_xoa.BorderColor = System.Drawing.Color.Black;
+            this.btn_xoa.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_xoa.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.ForeColor = System.Drawing.Color.Black;
+            this.btn_xoa.Image = null;
+            this.btn_xoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_xoa.Location = new System.Drawing.Point(476, 419);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_xoa.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_xoa.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_xoa.OnHoverImage = null;
+            this.btn_xoa.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_xoa.Size = new System.Drawing.Size(107, 42);
+            this.btn_xoa.TabIndex = 16;
+            this.btn_xoa.Text = "Xoá";
+            this.btn_xoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaButton2
+            // btn_sua
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(349, 419);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(106, 42);
-            this.gunaButton2.TabIndex = 17;
-            this.gunaButton2.Text = "Sửa";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_sua.AnimationHoverSpeed = 0.07F;
+            this.btn_sua.AnimationSpeed = 0.03F;
+            this.btn_sua.BaseColor = System.Drawing.Color.Silver;
+            this.btn_sua.BorderColor = System.Drawing.Color.Black;
+            this.btn_sua.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_sua.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_sua.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.ForeColor = System.Drawing.Color.Black;
+            this.btn_sua.Image = null;
+            this.btn_sua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_sua.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_sua.Location = new System.Drawing.Point(343, 419);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_sua.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_sua.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_sua.OnHoverImage = null;
+            this.btn_sua.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_sua.Size = new System.Drawing.Size(106, 42);
+            this.btn_sua.TabIndex = 17;
+            this.btn_sua.Text = "Sửa";
+            this.btn_sua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaButton3
+            // btn_chiTiet
             // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton3.Image = null;
-            this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(163, 419);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(165, 42);
-            this.gunaButton3.TabIndex = 18;
-            this.gunaButton3.Text = "Xem chi tiết";
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chiTiet.AnimationHoverSpeed = 0.07F;
+            this.btn_chiTiet.AnimationSpeed = 0.03F;
+            this.btn_chiTiet.BaseColor = System.Drawing.Color.Silver;
+            this.btn_chiTiet.BorderColor = System.Drawing.Color.Black;
+            this.btn_chiTiet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_chiTiet.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_chiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chiTiet.ForeColor = System.Drawing.Color.Black;
+            this.btn_chiTiet.Image = null;
+            this.btn_chiTiet.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chiTiet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_chiTiet.Location = new System.Drawing.Point(163, 419);
+            this.btn_chiTiet.Name = "btn_chiTiet";
+            this.btn_chiTiet.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_chiTiet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_chiTiet.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_chiTiet.OnHoverImage = null;
+            this.btn_chiTiet.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_chiTiet.Size = new System.Drawing.Size(165, 42);
+            this.btn_chiTiet.TabIndex = 18;
+            this.btn_chiTiet.Text = "Xem chi tiết";
+            this.btn_chiTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chiTiet.Click += new System.EventHandler(this.btn_chiTiet_Click);
             // 
-            // gunaButton1
+            // btn_them
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(26, 419);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(115, 42);
-            this.gunaButton1.TabIndex = 15;
-            this.gunaButton1.Text = "Thêm";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.btn_them.AnimationHoverSpeed = 0.07F;
+            this.btn_them.AnimationSpeed = 0.03F;
+            this.btn_them.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_them.BorderColor = System.Drawing.Color.Black;
+            this.btn_them.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_them.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_them.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.ForeColor = System.Drawing.Color.White;
+            this.btn_them.Image = null;
+            this.btn_them.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_them.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_them.Location = new System.Drawing.Point(26, 419);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_them.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_them.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_them.OnHoverImage = null;
+            this.btn_them.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_them.Size = new System.Drawing.Size(115, 42);
+            this.btn_them.TabIndex = 15;
+            this.btn_them.Text = "Thêm";
+            this.btn_them.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // gunaLabel1
             // 
@@ -216,10 +217,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 490);
-            this.Controls.Add(this.gunaButton4);
-            this.Controls.Add(this.gunaButton2);
-            this.Controls.Add(this.gunaButton3);
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.btn_xoa);
+            this.Controls.Add(this.btn_sua);
+            this.Controls.Add(this.btn_chiTiet);
+            this.Controls.Add(this.btn_them);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.dgv_nhanVien);
             this.Name = "NhanVien";
@@ -232,10 +233,10 @@
 
         #endregion
         public Guna.UI.WinForms.GunaDataGridView dgv_nhanVien;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btn_xoa;
+        private Guna.UI.WinForms.GunaButton btn_sua;
+        private Guna.UI.WinForms.GunaButton btn_chiTiet;
+        private Guna.UI.WinForms.GunaButton btn_them;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }
