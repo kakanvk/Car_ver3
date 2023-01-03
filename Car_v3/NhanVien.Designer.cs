@@ -232,7 +232,7 @@
             this.tb_timKiem.SelectedText = "";
             this.tb_timKiem.Size = new System.Drawing.Size(640, 45);
             this.tb_timKiem.TabIndex = 33;
-            this.tb_timKiem.Text = "   Tìm kiếm nhân viên\r\n";
+            this.tb_timKiem.Text = "   Tìm kiếm tên nhân viên";
             // 
             // btn_timKiem
             // 
