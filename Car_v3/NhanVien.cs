@@ -29,12 +29,14 @@ namespace Car_v3
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
 
-        }     
+        }
+
+        
 
         public void HienThiDL()
         {
 
-            string str = "select maNhanVien as 'Mã nhân viên', tenNhanVien as 'Tên nhân viên', diachiNhanVien as 'Địa chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
+            string str = "select maNhanVien , tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
             //str = "select a.MANHANVIEN , B.TENPHANQUYEN FROM NHANVIEN AS a ,PHANQUYEN AS b where a.MAPHANQUYEN = b.MAPHANQUYEN;";
             tb = help.LayBang(str);
             dgv_nhanVien.DataSource = tb;
@@ -45,12 +47,22 @@ namespace Car_v3
 
         public static int id = 0;
         public static int check = 0;
+        private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
+
+            dgv_nhanVien.CurrentRow.Selected = true;
+
+
+            id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
+           
+        }
+
+
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-
             check = 1;
-
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
             nhanVienMoi.ShowDialog();
         }
@@ -59,7 +71,7 @@ namespace Car_v3
         {
             check = 2;
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
-
+            
             nhanVienMoi.ShowDialog();
             
         }
@@ -77,21 +89,6 @@ namespace Car_v3
             help.CapNhatDL(query);
 
             HienThiDL();
-        }
-
-        private void NhanVien_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_nhanVien_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
-
-            dgv_nhanVien.CurrentRow.Selected = true;
-
-
-            id = Convert.ToInt32(row.Cells[0].Value.ToString());
         }
     }
 }

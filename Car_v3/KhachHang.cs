@@ -82,5 +82,10 @@ namespace Car_v3
 
             HienThiDL();
         }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
