@@ -37,6 +37,8 @@
             this.btn_chiTiet = new Guna.UI.WinForms.GunaButton();
             this.btn_them = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.btn_timKiem = new Guna.UI.WinForms.GunaButton();
+            this.tb_timKiem = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_khachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             this.dgv_khachHang.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_khachHang.EnableHeadersVisualStyles = false;
             this.dgv_khachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_khachHang.Location = new System.Drawing.Point(34, 75);
+            this.dgv_khachHang.Location = new System.Drawing.Point(37, 177);
             this.dgv_khachHang.Name = "dgv_khachHang";
             this.dgv_khachHang.RowHeadersVisible = false;
             this.dgv_khachHang.RowHeadersWidth = 62;
@@ -113,7 +115,7 @@
             this.btn_xoa.Image = null;
             this.btn_xoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_xoa.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_xoa.Location = new System.Drawing.Point(484, 437);
+            this.btn_xoa.Location = new System.Drawing.Point(487, 563);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_xoa.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -139,7 +141,7 @@
             this.btn_sua.Image = null;
             this.btn_sua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_sua.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_sua.Location = new System.Drawing.Point(357, 437);
+            this.btn_sua.Location = new System.Drawing.Point(360, 563);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_sua.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -165,7 +167,7 @@
             this.btn_chiTiet.Image = null;
             this.btn_chiTiet.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_chiTiet.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_chiTiet.Location = new System.Drawing.Point(171, 437);
+            this.btn_chiTiet.Location = new System.Drawing.Point(174, 563);
             this.btn_chiTiet.Name = "btn_chiTiet";
             this.btn_chiTiet.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_chiTiet.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -191,7 +193,7 @@
             this.btn_them.Image = null;
             this.btn_them.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_them.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_them.Location = new System.Drawing.Point(34, 437);
+            this.btn_them.Location = new System.Drawing.Point(37, 563);
             this.btn_them.Name = "btn_them";
             this.btn_them.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_them.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -208,17 +210,64 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(29, 32);
+            this.gunaLabel1.Location = new System.Drawing.Point(32, 127);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(236, 30);
             this.gunaLabel1.TabIndex = 26;
             this.gunaLabel1.Text = "Danh sách khách hàng";
             // 
+            // btn_timKiem
+            // 
+            this.btn_timKiem.AnimationHoverSpeed = 0.07F;
+            this.btn_timKiem.AnimationSpeed = 0.03F;
+            this.btn_timKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btn_timKiem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.BorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_timKiem.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_timKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timKiem.ForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.Image = global::Car_v3.Properties.Resources.Picture2;
+            this.btn_timKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_timKiem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_timKiem.Location = new System.Drawing.Point(657, 41);
+            this.btn_timKiem.Name = "btn_timKiem";
+            this.btn_timKiem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.OnHoverImage = null;
+            this.btn_timKiem.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_timKiem.Radius = 2;
+            this.btn_timKiem.Size = new System.Drawing.Size(157, 45);
+            this.btn_timKiem.TabIndex = 36;
+            this.btn_timKiem.Text = "Tìm kiếm";
+            this.btn_timKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tb_timKiem
+            // 
+            this.tb_timKiem.BaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.BorderColor = System.Drawing.Color.Silver;
+            this.tb_timKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_timKiem.FocusedBaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tb_timKiem.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.tb_timKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_timKiem.Location = new System.Drawing.Point(37, 41);
+            this.tb_timKiem.Name = "tb_timKiem";
+            this.tb_timKiem.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.tb_timKiem.PasswordChar = '\0';
+            this.tb_timKiem.SelectedText = "";
+            this.tb_timKiem.Size = new System.Drawing.Size(601, 45);
+            this.tb_timKiem.TabIndex = 35;
+            this.tb_timKiem.Text = "   Tìm kiếm tên khách hàng";
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 513);
+            this.ClientSize = new System.Drawing.Size(851, 635);
+            this.Controls.Add(this.btn_timKiem);
+            this.Controls.Add(this.tb_timKiem);
             this.Controls.Add(this.dgv_khachHang);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_sua);
@@ -242,5 +291,7 @@
         private Guna.UI.WinForms.GunaButton btn_chiTiet;
         private Guna.UI.WinForms.GunaButton btn_them;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaButton btn_timKiem;
+        private Guna.UI.WinForms.GunaTextBox tb_timKiem;
     }
 }
