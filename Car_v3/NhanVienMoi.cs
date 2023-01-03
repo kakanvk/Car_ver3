@@ -27,7 +27,7 @@ namespace Car_v3
             help = new help();
             if (help.Mo_KN_CSDL())
             {
-                //   MessageBox.Show("Mo Dc CSDL Roi","Thông Báo!!!");
+                MessageBox.Show(""+NhanVien.check);
                 HienThiDL();
             }
             else
@@ -90,16 +90,23 @@ namespace Car_v3
             string str;
             int id_nhanvien_click = NhanVien.id;
             con.Open();
-            if (id_nhanvien_click != 0)
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM nhanvien where manhanvien = @id",con);
+            cmd.Parameters.AddWithValue("@id",id_nhanvien_click);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if(NhanVien.check == 1)
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM nhanvien where manhanvien = @id",con);
-                cmd.Parameters.AddWithValue("@id",id_nhanvien_click);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if(NhanVien.check == 1)
-                {
+                                       
+                    str = "select * from phanquyen";
 
-                }
-                else if(NhanVien.check == 2)
+                    tb = help.LayBang(str);
+                    cb_chucVu.DataSource = tb;
+                    cb_chucVu.DisplayMember = "tenphanQuyen";
+                    cb_chucVu.ValueMember = "maphanQuyen";
+                    
+
+            }
+            else if(NhanVien.check == 2)
                 {
                     while (dr.Read())
                     {
@@ -120,7 +127,14 @@ namespace Car_v3
                         tb_diaChi.ReadOnly = true;
                         btn_luu.Enabled = false;
                     }
-                }
+                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
+
+
+                tb = help.LayBang(str);
+                cb_chucVu.DataSource = tb;
+                cb_chucVu.DisplayMember = "tenphanQuyen";
+                cb_chucVu.ValueMember = "maphanQuyen";
+            }
                 else
                 {
                     while (dr.Read())
@@ -133,18 +147,7 @@ namespace Car_v3
                         tb_email.Text = dr.GetValue(7).ToString();
                         tb_diaChi.Text = dr.GetValue(8).ToString();
                     }
-                }
-            
-                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
 
-
-                tb = help.LayBang(str);
-                cb_chucVu.DataSource = tb;
-                cb_chucVu.DisplayMember = "tenphanQuyen";
-                cb_chucVu.ValueMember = "maphanQuyen";
-            }
-            else
-            {
                 str = "select * from phanquyen";
 
                 tb = help.LayBang(str);
@@ -152,6 +155,8 @@ namespace Car_v3
                 cb_chucVu.DisplayMember = "tenphanQuyen";
                 cb_chucVu.ValueMember = "maphanQuyen";
             }
+            
+            
 
             con.Close();
         }
