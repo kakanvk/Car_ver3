@@ -45,6 +45,12 @@ namespace Car_v3
 
             id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
         }
+
+        private void NSX_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         void HienThiDL()
         {
             string str = "select * from nsx";

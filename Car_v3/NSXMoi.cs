@@ -86,5 +86,10 @@ namespace Car_v3
                 PictureBox1.Image = new Bitmap(opnfd.FileName);
             }
         }
+
+        private void NSXMoi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
