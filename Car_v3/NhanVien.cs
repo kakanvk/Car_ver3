@@ -54,7 +54,7 @@ namespace Car_v3
             dgv_nhanVien.CurrentRow.Selected = true;
 
 
-           id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
+            id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
            
         }
 

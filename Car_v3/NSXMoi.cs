@@ -16,9 +16,11 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
-        public NSXMoi()
+        NSX NSX;
+        public NSXMoi(NSX nSX)
         {
             InitializeComponent();
+            NSX = nSX;
             help = new help();
             if (help.Mo_KN_CSDL())
             {
@@ -29,7 +31,7 @@ namespace Car_v3
             {
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
-
+            NSX = nSX;
         }
         string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
         
@@ -48,7 +50,8 @@ namespace Car_v3
             command.Parameters.AddWithValue("@image", image);
             command.CommandText = "insert into nsx values(N'" + tb_tenNSX.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "'," + tb_sdt.Text.Trim() + ",@image)";
             command.ExecuteNonQuery();
-            //HienThiDL();
+            NSX.HienThiDL();
+            this.Close();
             con.Close();
         }
         void HienThiDL()
@@ -60,20 +63,43 @@ namespace Car_v3
             SqlCommand cmd = new SqlCommand("SELECT * FROM nsx where maNSX = @id", con);
             cmd.Parameters.AddWithValue("@id", id_nsx_click);
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (NSX.check == 1)
             {
-                tb_tenNSX.Text = dr.GetValue(1).ToString();
-                tb_diaChi.Text = dr.GetValue(2).ToString();
-                tb_sdt.Text = dr.GetValue(3).ToString();
-
-
-                byte[] b = new byte[0];
-                b = (Byte[])(dr["logoNSX"]);
-                MemoryStream ms = new MemoryStream(b);
-                PictureBox1.Image = Image.FromStream(ms);
 
             }
-            
+            else if (NSX.check == 2)
+            {
+                while (dr.Read())
+                {
+                    tb_tenNSX.Text = dr.GetValue(1).ToString();
+                    tb_diaChi.Text = dr.GetValue(2).ToString();
+                    tb_sdt.Text = dr.GetValue(3).ToString();
+                    byte[] b = new byte[0];
+                    b = (Byte[])(dr["logoNSX"]);
+                    MemoryStream ms = new MemoryStream(b);
+                    PictureBox1.Image = Image.FromStream(ms);
+
+                    tb_tenNSX.ReadOnly = true;
+                    tb_diaChi.ReadOnly = true;
+                    tb_sdt.ReadOnly = true;
+                    btn_luu.Enabled = false;
+                }
+                
+            }
+            else
+            {
+                while (dr.Read())
+                {
+                    tb_tenNSX.Text = dr.GetValue(1).ToString();
+                    tb_diaChi.Text = dr.GetValue(2).ToString();
+                    tb_sdt.Text = dr.GetValue(3).ToString();
+                    byte[] b = new byte[0];
+                    b = (Byte[])(dr["logoNSX"]);
+                    MemoryStream ms = new MemoryStream(b);
+                    PictureBox1.Image = Image.FromStream(ms);
+                }
+            }
+
 
             con.Close();
         }

@@ -27,7 +27,6 @@ namespace Car_v3
             help = new help();
             if (help.Mo_KN_CSDL())
             {
-                MessageBox.Show(""+NhanVien.check);
                 HienThiDL();
             }
             else
