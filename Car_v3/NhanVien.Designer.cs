@@ -276,7 +276,6 @@
             this.Controls.Add(this.gunaLabel1);
             this.Name = "NhanVien";
             this.Text = "NhanVien";
-            this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
