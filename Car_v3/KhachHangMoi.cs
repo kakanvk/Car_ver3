@@ -127,9 +127,6 @@ namespace Car_v3
                     this.Close();
                 }
 
-
-
-
             }
             catch
             {
