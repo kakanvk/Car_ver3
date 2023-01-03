@@ -14,9 +14,9 @@ namespace Car_v3
     {
         public SqlConnection kn;
         public SqlCommand lenh;
-        public SqlDataAdapter bodocdulieu;
-        public SqlDataReader reader;
-        public DataSet ds;
+        //public SqlDataAdapter bodocdulieu;
+        //public SqlDataReader reader;
+        //public DataSet ds;
         public help()
         {
             string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";

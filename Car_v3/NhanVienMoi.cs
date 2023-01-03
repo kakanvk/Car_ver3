@@ -71,11 +71,7 @@ namespace Car_v3
 
                     nv.HienThiDL();
                     this.Close();
-                    }
-                    
-                                
-                
-
+                    }                                                           
             }
             catch
             {
@@ -106,7 +102,7 @@ namespace Car_v3
 
             }
             else if(NhanVien.check == 2)
-                {
+            {
                     while (dr.Read())
                     {
                         tb_tenNhanVien.Text = dr.GetValue(2).ToString();
@@ -126,13 +122,14 @@ namespace Car_v3
                         tb_diaChi.Enabled = false;
                         btn_luu.Enabled = false;
                     }
-                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
+                    str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
 
 
-                tb = help.LayBang(str);
-                cb_chucVu.DataSource = tb;
-                cb_chucVu.DisplayMember = "tenphanQuyen";
-                cb_chucVu.ValueMember = "maphanQuyen";
+                    tb = help.LayBang(str);
+                    cb_chucVu.DataSource = tb;
+                    cb_chucVu.DisplayMember = "tenphanQuyen";
+                    cb_chucVu.ValueMember = "maphanQuyen";
+                    cb_chucVu.Enabled = false;
             }
                 else
                 {
@@ -147,7 +144,7 @@ namespace Car_v3
                         tb_diaChi.Text = dr.GetValue(8).ToString();
                     }
 
-                str = "select * from phanquyen";
+                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
 
                 tb = help.LayBang(str);
                 cb_chucVu.DataSource = tb;

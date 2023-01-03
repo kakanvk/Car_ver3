@@ -14,7 +14,6 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
-        public static int check = 0;
         public NSX()
         {
             InitializeComponent();
@@ -33,9 +32,8 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            check = 1;
-            NSXMoi nSXMoi = new NSXMoi(this);
-            nSXMoi.ShowDialog();
+            NSXMoi nSXMoi = new NSXMoi();
+            nSXMoi.Show();
         }
         public static int id = 0;
         private void dgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -47,7 +45,13 @@ namespace Car_v3
 
             id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
         }
-        public void HienThiDL()
+
+        private void NSX_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        void HienThiDL()
         {
             string str = "select * from nsx";
             tb = help.LayBang(str);
@@ -55,20 +59,6 @@ namespace Car_v3
             dgv_NSX.AllowUserToAddRows = false;
             dgv_NSX.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-        }
-
-        private void btn_chiTiet_Click(object sender, EventArgs e)
-        {
-            check = 2;
-            NSXMoi nSXMoi = new NSXMoi(this);
-            nSXMoi.ShowDialog();
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            check = 3;
-            NSXMoi nSXMoi = new NSXMoi(this);
-            nSXMoi.ShowDialog();
         }
     }
 }

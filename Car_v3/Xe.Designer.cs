@@ -37,6 +37,8 @@
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.btn_timKiem = new Guna.UI.WinForms.GunaButton();
+            this.tb_timKiem = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.Location = new System.Drawing.Point(29, 62);
+            this.gunaDataGridView1.Location = new System.Drawing.Point(28, 176);
             this.gunaDataGridView1.Name = "gunaDataGridView1";
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.RowHeadersWidth = 62;
@@ -112,7 +114,7 @@
             this.gunaButton4.Image = null;
             this.gunaButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(479, 424);
+            this.gunaButton4.Location = new System.Drawing.Point(478, 539);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -137,7 +139,7 @@
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(352, 424);
+            this.gunaButton2.Location = new System.Drawing.Point(351, 539);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -162,7 +164,7 @@
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(166, 424);
+            this.gunaButton3.Location = new System.Drawing.Point(165, 539);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -187,7 +189,7 @@
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(29, 424);
+            this.gunaButton1.Location = new System.Drawing.Point(28, 539);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -204,17 +206,64 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(24, 19);
+            this.gunaLabel1.Location = new System.Drawing.Point(23, 123);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(144, 30);
             this.gunaLabel1.TabIndex = 26;
             this.gunaLabel1.Text = "Danh sách xe";
             // 
+            // btn_timKiem
+            // 
+            this.btn_timKiem.AnimationHoverSpeed = 0.07F;
+            this.btn_timKiem.AnimationSpeed = 0.03F;
+            this.btn_timKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btn_timKiem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.BorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_timKiem.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_timKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timKiem.ForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.Image = global::Car_v3.Properties.Resources.Picture2;
+            this.btn_timKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_timKiem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_timKiem.Location = new System.Drawing.Point(853, 37);
+            this.btn_timKiem.Name = "btn_timKiem";
+            this.btn_timKiem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.OnHoverImage = null;
+            this.btn_timKiem.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_timKiem.Radius = 2;
+            this.btn_timKiem.Size = new System.Drawing.Size(157, 45);
+            this.btn_timKiem.TabIndex = 36;
+            this.btn_timKiem.Text = "Tìm kiếm";
+            this.btn_timKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tb_timKiem
+            // 
+            this.tb_timKiem.BaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.BorderColor = System.Drawing.Color.Silver;
+            this.tb_timKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_timKiem.FocusedBaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tb_timKiem.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.tb_timKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_timKiem.Location = new System.Drawing.Point(28, 37);
+            this.tb_timKiem.Name = "tb_timKiem";
+            this.tb_timKiem.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.tb_timKiem.PasswordChar = '\0';
+            this.tb_timKiem.SelectedText = "";
+            this.tb_timKiem.Size = new System.Drawing.Size(799, 45);
+            this.tb_timKiem.TabIndex = 35;
+            this.tb_timKiem.Text = "   Tìm kiếm tên xe";
+            // 
             // Xe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 503);
+            this.ClientSize = new System.Drawing.Size(1036, 614);
+            this.Controls.Add(this.btn_timKiem);
+            this.Controls.Add(this.tb_timKiem);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.gunaButton4);
             this.Controls.Add(this.gunaButton2);
@@ -237,5 +286,7 @@
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaButton btn_timKiem;
+        private Guna.UI.WinForms.GunaTextBox tb_timKiem;
     }
 }
