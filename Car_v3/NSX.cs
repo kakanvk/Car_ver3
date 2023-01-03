@@ -14,6 +14,7 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
+        public int check;
         public NSX()
         {
             InitializeComponent();
@@ -32,9 +33,10 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            NSXMoi nSXMoi = new NSXMoi();
-            nSXMoi.Show();
+            NSXMoi nSXMoi = new NSXMoi(this);
+            nSXMoi.ShowDialog();
         }
+
         public static int id = 0;
         private void dgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -51,7 +53,7 @@ namespace Car_v3
             
         }
 
-        void HienThiDL()
+        public void HienThiDL()
         {
             string str = "select * from nsx";
             tb = help.LayBang(str);

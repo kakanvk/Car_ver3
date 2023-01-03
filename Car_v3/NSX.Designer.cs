@@ -91,7 +91,6 @@
             this.btn_sua.TabIndex = 11;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_chiTiet
             // 
@@ -117,7 +116,6 @@
             this.btn_chiTiet.TabIndex = 12;
             this.btn_chiTiet.Text = "Xem chi tiết";
             this.btn_chiTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_chiTiet.Click += new System.EventHandler(this.btn_chiTiet_Click);
             // 
             // btn_them
             // 
