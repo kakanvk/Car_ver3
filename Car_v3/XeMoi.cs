@@ -24,7 +24,7 @@ namespace Car_v3
 
         private void lb_themLoaiXe_Click(object sender, EventArgs e)
         {
-            LoaiXeMoi xe = new LoaiXeMoi();
+            LoaiXeMoi xe = new LoaiXeMoi(this);
             xe.ShowDialog();
         }
     }
