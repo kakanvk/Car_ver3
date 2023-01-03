@@ -16,5 +16,10 @@ namespace Car_v3
         {
             InitializeComponent();
         }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
