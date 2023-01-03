@@ -172,6 +172,7 @@
             this.btn_timKiem.TabIndex = 38;
             this.btn_timKiem.Text = "Tìm kiếm";
             this.btn_timKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_timKiem.Click += new System.EventHandler(this.btn_timKiem_Click);
             // 
             // tb_timKiem
             // 
@@ -190,6 +191,7 @@
             this.tb_timKiem.Size = new System.Drawing.Size(640, 45);
             this.tb_timKiem.TabIndex = 37;
             this.tb_timKiem.Text = "   Tìm kiếm tên nhân viên";
+            this.tb_timKiem.TextChanged += new System.EventHandler(this.tb_timKiem_TextChanged);
             // 
             // dgv_nhanVien
             // 
@@ -249,6 +251,7 @@
             this.dgv_nhanVien.ThemeStyle.RowsStyle.Height = 28;
             this.dgv_nhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_nhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_nhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nhanVien_CellClick);
             // 
             // gunaLabel1
             // 

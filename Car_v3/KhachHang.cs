@@ -64,5 +64,14 @@ namespace Car_v3
             KhachHangMoi khachHangMoi = new KhachHangMoi(this);
             khachHangMoi.ShowDialog();
         }
+
+        private void dgv_khachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_khachHang.Rows[e.RowIndex];
+
+            dgv_khachHang.CurrentRow.Selected = true;
+
+            id = Convert.ToInt32(row.Cells[0].Value.ToString());
+        }
     }
 }

@@ -38,15 +38,7 @@ namespace Car_v3
             nSXMoi.ShowDialog();
         }
         public static int id = 0;
-        private void dgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.dgv_NSX.Rows[e.RowIndex];
-
-            dgv_NSX.CurrentRow.Selected = true;
-
-
-            id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
-        }
+        
         public void HienThiDL()
         {
             string str = "select * from nsx";
@@ -69,6 +61,16 @@ namespace Car_v3
             check = 3;
             NSXMoi nSXMoi = new NSXMoi(this);
             nSXMoi.ShowDialog();
+        }
+
+        private void dgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_NSX.Rows[e.RowIndex];
+
+            dgv_NSX.CurrentRow.Selected = true;
+
+
+            id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
         }
     }
 }

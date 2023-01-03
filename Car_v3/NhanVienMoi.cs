@@ -27,6 +27,7 @@ namespace Car_v3
             help = new help();
             if (help.Mo_KN_CSDL())
             {
+                MessageBox.Show("" + NhanVien.check);
                 HienThiDL();
             }
             else
@@ -89,7 +90,7 @@ namespace Car_v3
             string str;
             int id_nhanvien_click = NhanVien.id;
             con.Open();
-            
+            MessageBox.Show("" + id_nhanvien_click);
             SqlCommand cmd = new SqlCommand("SELECT * FROM nhanvien where manhanvien = @id",con);
             cmd.Parameters.AddWithValue("@id",id_nhanvien_click);
             SqlDataReader dr = cmd.ExecuteReader();

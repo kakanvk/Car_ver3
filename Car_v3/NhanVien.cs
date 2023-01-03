@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Car_v3
 {
@@ -47,16 +49,7 @@ namespace Car_v3
 
         public static int id = 0;
         public static int check = 0;
-        private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
-
-            dgv_nhanVien.CurrentRow.Selected = true;
-
-
-            id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
-           
-        }
+        
 
 
 
@@ -89,6 +82,31 @@ namespace Car_v3
             help.CapNhatDL(query);
 
             HienThiDL();
+        }
+        string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+        void KetQuaTimKiem()
+        {
+            
+            
+        }
+        private void btn_timKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
+
+            dgv_nhanVien.CurrentRow.Selected = true;
+
+
+            id = Convert.ToInt32(row.Cells[0].Value.ToString());
         }
     }
 }
