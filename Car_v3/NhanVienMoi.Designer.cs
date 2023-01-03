@@ -314,9 +314,6 @@
             this.cb_chucVu.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cb_chucVu.ForeColor = System.Drawing.Color.Black;
             this.cb_chucVu.FormattingEnabled = true;
-            this.cb_chucVu.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
             this.cb_chucVu.Location = new System.Drawing.Point(194, 24);
             this.cb_chucVu.Name = "cb_chucVu";
             this.cb_chucVu.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));

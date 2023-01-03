@@ -12,9 +12,22 @@ namespace Car_v3
 {
     public partial class NSX : Form
     {
+        help help = new help();
+        DataTable tb;
         public NSX()
         {
             InitializeComponent();
+            help = new help();
+            if (help.Mo_KN_CSDL())
+            {
+                HienThiDL();
+
+            }
+            else
+            {
+                MessageBox.Show("kết nối dữ liệu thất bại");
+            }
+
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -31,6 +44,15 @@ namespace Car_v3
 
 
             id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
+        }
+        void HienThiDL()
+        {
+            string str = "select * from nsx";
+            tb = help.LayBang(str);
+            dgv_NSX.DataSource = tb;
+            dgv_NSX.AllowUserToAddRows = false;
+            dgv_NSX.EditMode = DataGridViewEditMode.EditProgrammatically;
+
         }
     }
 }
