@@ -38,12 +38,14 @@ namespace Car_v3
         public void HienThiDL()
         {
 
-            string str = "select maNhanVien , tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
+            string str = "select maNhanVien , tenNhanVien , diachiNhanVien , sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
             //str = "select a.MANHANVIEN , B.TENPHANQUYEN FROM NHANVIEN AS a ,PHANQUYEN AS b where a.MAPHANQUYEN = b.MAPHANQUYEN;";
             tb = help.LayBang(str);
             dgv_nhanVien.DataSource = tb;
             dgv_nhanVien.AllowUserToAddRows = false;
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv_nhanVien.Columns[1].HeaderText = "Tên nhân viên";
+            dgv_nhanVien.Columns[0].HeaderText = "Mã nhân viên";
         }
 
 
@@ -87,12 +89,15 @@ namespace Car_v3
 
         private void tb_timKiem_TextChanged(object sender, EventArgs e)
         {
-           
+            (dgv_nhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenNhanVien LIKE '%{0}%' or diachiNhanVien like '%{0}%'", tb_timKiem.Text);
         }
         void KetQuaTimKiem()
         {
             
-            
+            dgv_nhanVien.DataSource = tb;
+            dgv_nhanVien.AllowUserToAddRows = false;
+            dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
+
         }
         private void btn_timKiem_Click(object sender, EventArgs e)
         {
