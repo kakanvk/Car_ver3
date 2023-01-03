@@ -14,9 +14,22 @@ namespace Car_v3
 {
     public partial class NSXMoi : Form
     {
+        help help = new help();
+        DataTable tb;
         public NSXMoi()
         {
             InitializeComponent();
+            help = new help();
+            if (help.Mo_KN_CSDL())
+            {
+                HienThiDL();
+
+            }
+            else
+            {
+                MessageBox.Show("kết nối dữ liệu thất bại");
+            }
+
         }
         string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
         
@@ -53,10 +66,11 @@ namespace Car_v3
                 tb_diaChi.Text = dr.GetValue(2).ToString();
                 tb_sdt.Text = dr.GetValue(3).ToString();
 
-                //Byte[] data = new Byte[0];
-                //data = (Byte[])(row.Cells["image"].Value);
-                //MemoryStream mem = new MemoryStream(data);
-               // PictureBox1.Image = Image.FromStream(dr.GetValue();
+
+                byte[] b = new byte[0];
+                b = (Byte[])(dr["logoNSX"]);
+                MemoryStream ms = new MemoryStream(b);
+                PictureBox1.Image = Image.FromStream(ms);
 
             }
             
