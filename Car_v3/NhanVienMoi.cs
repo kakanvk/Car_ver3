@@ -76,7 +76,7 @@ namespace Car_v3
         {
             SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
             string str;
-            int id_nhanvien_click = NhanVien.id;
+            int id_nhanvien_click = nv.id;
             con.Open();
             if (id_nhanvien_click != 0)
             {

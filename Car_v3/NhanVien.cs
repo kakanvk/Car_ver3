@@ -14,6 +14,7 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
+        public int id = 0;
 
         public NhanVien()
         {
@@ -29,9 +30,7 @@ namespace Car_v3
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
 
-        }
-
-        
+        }     
 
         public void HienThiDL()
         {
@@ -44,8 +43,6 @@ namespace Car_v3
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
-
-        public static int id = 0;
         private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
@@ -53,18 +50,16 @@ namespace Car_v3
             dgv_nhanVien.CurrentRow.Selected = true;
 
 
-           id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
-           
+            this.id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());        
         }
 
         
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            
 
+            this.id = 0;
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
-            //this.Hide();
             nhanVienMoi.ShowDialog();
             
         }
@@ -72,7 +67,6 @@ namespace Car_v3
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
-            //this.Hide();
             nhanVienMoi.ShowDialog();
         }
     }

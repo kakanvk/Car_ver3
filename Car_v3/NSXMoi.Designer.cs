@@ -124,7 +124,7 @@
             // 
             this.PictureBox1.BaseColor = System.Drawing.Color.White;
             this.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBox1.Location = new System.Drawing.Point(168, 327);
+            this.PictureBox1.Location = new System.Drawing.Point(195, 327);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(187, 151);
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,6 +238,7 @@
             this.Controls.Add(this.gunaLabel1);
             this.Name = "NSXMoi";
             this.Text = "NSXMoi";
+            this.Load += new System.EventHandler(this.NSXMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
