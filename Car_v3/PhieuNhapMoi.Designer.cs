@@ -49,9 +49,9 @@
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.tb_maNSX = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.dgv_phieuNhap = new Guna.UI.WinForms.GunaDataGridView();
+            this.dgv_phieuNhapMoi = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieuNhap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieuNhapMoi)).BeginInit();
             this.SuspendLayout();
             // 
             // ngayNhap
@@ -152,6 +152,7 @@
             this.btn_xoa.TabIndex = 6;
             this.btn_xoa.Text = "Xoá";
             this.btn_xoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -363,15 +364,15 @@
             this.gunaLabel4.TabIndex = 9;
             this.gunaLabel4.Text = "Tên nhà sản xuất";
             // 
-            // dgv_phieuNhap
+            // dgv_phieuNhapMoi
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_phieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_phieuNhap.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_phieuNhap.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_phieuNhap.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_phieuNhapMoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_phieuNhapMoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_phieuNhapMoi.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_phieuNhapMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_phieuNhapMoi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_phieuNhapMoi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -379,8 +380,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_phieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_phieuNhap.ColumnHeadersHeight = 30;
+            this.dgv_phieuNhapMoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_phieuNhapMoi.ColumnHeadersHeight = 30;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -388,39 +389,40 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_phieuNhap.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_phieuNhap.EnableHeadersVisualStyles = false;
-            this.dgv_phieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_phieuNhap.Location = new System.Drawing.Point(88, 213);
-            this.dgv_phieuNhap.Name = "dgv_phieuNhap";
-            this.dgv_phieuNhap.RowHeadersVisible = false;
-            this.dgv_phieuNhap.RowHeadersWidth = 62;
-            this.dgv_phieuNhap.RowTemplate.Height = 28;
-            this.dgv_phieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_phieuNhap.Size = new System.Drawing.Size(820, 268);
-            this.dgv_phieuNhap.TabIndex = 26;
-            this.dgv_phieuNhap.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgv_phieuNhap.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv_phieuNhap.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv_phieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv_phieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv_phieuNhap.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_phieuNhap.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgv_phieuNhap.ThemeStyle.ReadOnly = false;
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.Height = 28;
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_phieuNhap.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_phieuNhapMoi.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_phieuNhapMoi.EnableHeadersVisualStyles = false;
+            this.dgv_phieuNhapMoi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_phieuNhapMoi.Location = new System.Drawing.Point(88, 213);
+            this.dgv_phieuNhapMoi.Name = "dgv_phieuNhapMoi";
+            this.dgv_phieuNhapMoi.RowHeadersVisible = false;
+            this.dgv_phieuNhapMoi.RowHeadersWidth = 62;
+            this.dgv_phieuNhapMoi.RowTemplate.Height = 28;
+            this.dgv_phieuNhapMoi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_phieuNhapMoi.Size = new System.Drawing.Size(820, 268);
+            this.dgv_phieuNhapMoi.TabIndex = 26;
+            this.dgv_phieuNhapMoi.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgv_phieuNhapMoi.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_phieuNhapMoi.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgv_phieuNhapMoi.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgv_phieuNhapMoi.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgv_phieuNhapMoi.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgv_phieuNhapMoi.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_phieuNhapMoi.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgv_phieuNhapMoi.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgv_phieuNhapMoi.ThemeStyle.ReadOnly = false;
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.Height = 28;
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_phieuNhapMoi.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_phieuNhapMoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieuNhap_CellClick_1);
             // 
             // gunaLabel1
             // 
@@ -438,7 +440,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 696);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.dgv_phieuNhap);
+            this.Controls.Add(this.dgv_phieuNhapMoi);
             this.Controls.Add(this.ngayNhap);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_huy);
@@ -460,7 +462,7 @@
             this.Name = "PhieuNhapMoi";
             this.Text = "PhieuNhapMoi";
             this.Load += new System.EventHandler(this.PhieuNhapMoi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieuNhap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieuNhapMoi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,7 +488,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaTextBox tb_maNSX;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaDataGridView dgv_phieuNhap;
+        private Guna.UI.WinForms.GunaDataGridView dgv_phieuNhapMoi;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }

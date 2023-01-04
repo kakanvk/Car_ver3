@@ -24,11 +24,7 @@ namespace Car_v3
             newNSX.Show();
         }
 
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-            PhieuNhap newPN = new PhieuNhap();
-            newPN.Show();
-        }
+        
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
@@ -49,6 +45,24 @@ namespace Car_v3
             }
             else
                 MessageBox.Show("Chức năng này không giành cho bạn !");
+        }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_phieuNhap_Click(object sender, EventArgs e)
+        {
+
+            PhieuNhap newPN = new PhieuNhap();
+            newPN.Show();
+        }
+
+        private void gunaButton7_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.ShowDialog();
         }
     }
 }

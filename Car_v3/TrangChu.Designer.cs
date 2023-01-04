@@ -32,7 +32,7 @@
             this.btn_QLNSX = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.btn_phieuNhap = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
@@ -55,7 +55,7 @@
             this.gunaGroupBox1.Controls.Add(this.btn_QLNSX);
             this.gunaGroupBox1.Controls.Add(this.gunaButton5);
             this.gunaGroupBox1.Controls.Add(this.gunaButton4);
-            this.gunaGroupBox1.Controls.Add(this.gunaButton3);
+            this.gunaGroupBox1.Controls.Add(this.btn_phieuNhap);
             this.gunaGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gunaGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -116,6 +116,7 @@
             this.gunaButton5.TabIndex = 0;
             this.gunaButton5.Text = "Quản lí loại xe";
             this.gunaButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
             // 
             // gunaButton4
             // 
@@ -142,31 +143,31 @@
             this.gunaButton4.Text = "Quản lí xe";
             this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaButton3
+            // btn_phieuNhap
             // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton3.Image = null;
-            this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(57, 139);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(233, 42);
-            this.gunaButton3.TabIndex = 0;
-            this.gunaButton3.Text = "Quản lí phiếu nhập";
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            this.btn_phieuNhap.AnimationHoverSpeed = 0.07F;
+            this.btn_phieuNhap.AnimationSpeed = 0.03F;
+            this.btn_phieuNhap.BaseColor = System.Drawing.Color.Silver;
+            this.btn_phieuNhap.BorderColor = System.Drawing.Color.Black;
+            this.btn_phieuNhap.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_phieuNhap.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_phieuNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_phieuNhap.ForeColor = System.Drawing.Color.Black;
+            this.btn_phieuNhap.Image = null;
+            this.btn_phieuNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_phieuNhap.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_phieuNhap.Location = new System.Drawing.Point(57, 139);
+            this.btn_phieuNhap.Name = "btn_phieuNhap";
+            this.btn_phieuNhap.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_phieuNhap.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_phieuNhap.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_phieuNhap.OnHoverImage = null;
+            this.btn_phieuNhap.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_phieuNhap.Size = new System.Drawing.Size(233, 42);
+            this.btn_phieuNhap.TabIndex = 0;
+            this.btn_phieuNhap.Text = "Quản lí phiếu nhập";
+            this.btn_phieuNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_phieuNhap.Click += new System.EventHandler(this.btn_phieuNhap_Click);
             // 
             // gunaButton2
             // 
@@ -259,6 +260,7 @@
             this.gunaButton7.TabIndex = 0;
             this.gunaButton7.Text = "Quản lí hoá đơn";
             this.gunaButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton7.Click += new System.EventHandler(this.gunaButton7_Click);
             // 
             // gunaButton8
             // 
@@ -378,7 +380,7 @@
         private Guna.UI.WinForms.GunaButton btn_QLNSX;
         private Guna.UI.WinForms.GunaButton gunaButton5;
         private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaButton btn_phieuNhap;
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;

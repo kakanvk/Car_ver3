@@ -16,6 +16,11 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb = new DataTable();
+        public static int id =0;
+        public static int check = 0;
+        int id_phieuNhap_cellclick;
+        int id_sanPham_cellclick;
+
         Boolean checkthem = true;
         public PhieuNhapMoi()
         {
@@ -36,9 +41,6 @@ namespace Car_v3
             }
             
         }
-
-        
-
         private void PhieuNhapMoi_Load(object sender, EventArgs e)
         {
             
@@ -85,7 +87,7 @@ namespace Car_v3
             }
             string str = "select * from chitietnhap where maphieunhap ="+id+"";
             tb = help.LayBang(str);
-            dgv_phieuNhap.DataSource = tb;
+            dgv_phieuNhapMoi.DataSource = tb;
 
         }
         private void btn_luu_Click(object sender, EventArgs e)
@@ -113,15 +115,8 @@ namespace Car_v3
                 con.Close();
                 checkthem = false;
             }
-
-
-
             ChiTietPhieuNhap phieuNhap = new ChiTietPhieuNhap(this);
             phieuNhap.ShowDialog();
-
-
-
-
         }
 
         private void cb_tenNSX_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,9 +124,29 @@ namespace Car_v3
             tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();
         }
 
-        private void dgv_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_xoa_Click(object sender, EventArgs e)
         {
+            string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + " ";
+            help.CapNhatDL(query);
 
+            HienThiDL();
+            HienThiDl_phieuNhapMoi();
+        }
+
+        private void dgv_phieuNhap_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_phieuNhapMoi.Rows[e.RowIndex];
+
+            dgv_phieuNhapMoi.CurrentRow.Selected = true;
+
+
+            id_sanPham_cellclick = Convert.ToInt32(row.Cells["maSanPham"].Value.ToString());
+            id_phieuNhap_cellclick = Convert.ToInt32(row.Cells["maSanPham"].Value.ToString());
+
+            if (id != 0)
+            {
+                btn_sua.Enabled = true;
+            }
         }
     }
     

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,16 +78,21 @@ namespace Car_v3
                 id = dr[0].ToString();
             }
             MessageBox.Show(id);
-            if (PhieuNhap.check != 3){
-                str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
-            }
-            else
-            {
-                str = "update chitietnhap set masanpham = " + cb_tenSanPham.SelectedValue + ",maphieunhap = " + id + ",soluongnhap = " + tb_soLuongNhap.Text + ",gianhap = " + tb_giaNhap.Text + ",thanhtienctn = " + tb_thanhTien.Text + " where "+PhieuNhap.id+"";
-            }
+            
+            str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
             help.CapNhatDL(str);
+           
+            
             pnm.HienThiDl_phieuNhapMoi();
             this.Close();
+
+
+
+
+
+            
+
+
         }
         private void tb_giaNhap_TextChanged(object sender, EventArgs e)
         {
