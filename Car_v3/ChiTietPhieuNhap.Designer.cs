@@ -231,6 +231,7 @@
             this.Controls.Add(this.gunaLabel1);
             this.Name = "ChiTietPhieuNhap";
             this.Text = "ChiTietPhieuNhap";
+            this.Load += new System.EventHandler(this.ChiTietPhieuNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

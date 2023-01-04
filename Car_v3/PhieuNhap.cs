@@ -12,21 +12,13 @@ namespace Car_v3
 {
     public partial class PhieuNhap : Form
     {
-        DataTable tb = new DataTable();
 
         help help = new help();
-       
+        DataTable tb = new DataTable();
         public PhieuNhap()
         {
-            if (help.Mo_KN_CSDL())
-            {
-                HienthiDL();
-            }
-            else
-            {
-                MessageBox.Show("kết nối dữ liệu thất bại");
-            }
-
+            InitializeComponent();
+            HienthiDL();
         }
         public static int id;
         public static int check;
@@ -39,7 +31,21 @@ namespace Car_v3
             phieuNhap.ShowDialog();
         }
 
-       
+        private void dgv_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_phieuNhap.Rows[e.RowIndex];
+
+            dgv_phieuNhap.CurrentRow.Selected = true;
+            
+
+            id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
+
+        }
 
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
@@ -50,12 +56,11 @@ namespace Car_v3
 
         void HienthiDL()
         {
-            DataTable tb = new DataTable();
-            string str = "select mansx, tennsx from nsx";
+            string str = "select * from phieunhap";
             tb = help.LayBang(str);
-            dgv_phieuNhapp.DataSource = tb;
-            dgv_phieuNhapp.AllowUserToAddRows = false;
-            dgv_phieuNhapp.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv_phieuNhap.DataSource = tb;
+            dgv_phieuNhap.AllowUserToAddRows = false;
+            dgv_phieuNhap.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -65,27 +70,9 @@ namespace Car_v3
             phieuNhap.ShowDialog();
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e)
+        private void PhieuNhap_Load(object sender, EventArgs e)
         {
-            string query = "delete phieunhap where maphieunhap  ="+id+"";
-            help.CapNhatDL(query);
 
-            HienthiDL();
-        }
-
-        private void dgv_phieuNhap_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.dgv_phieuNhapp.Rows[e.RowIndex];
-
-            dgv_phieuNhapp.CurrentRow.Selected = true;
-
-
-            id = Convert.ToInt32(row.Cells[0].Value.ToString());
-            if (id != 0)
-            {
-                btn_chiTiet.Enabled = true;
-                btn_sua.Enabled = true;
-            }
         }
     }
 }

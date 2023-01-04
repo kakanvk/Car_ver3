@@ -120,5 +120,9 @@ namespace Car_v3
                 tb_thanhTien.Text = "Đầu vào không hợp lệ";
         }
 
+        private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
