@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Car_v3
 {
-    public partial class Xe : Form
+    public partial class ThongKe : Form
     {
-        public Xe()
+        public ThongKe()
         {
             InitializeComponent();
         }

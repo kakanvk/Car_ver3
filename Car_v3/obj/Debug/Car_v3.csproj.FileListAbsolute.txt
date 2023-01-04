@@ -26,3 +26,4 @@ D:\car_1\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.CoreCompileInputs.cache
 D:\car_1\Car_ver3\Car_v3\obj\Debug\Car_v3.csproj.CopyComplete
 D:\car_1\Car_ver3\Car_v3\obj\Debug\Car_v3.exe
 D:\car_1\Car_ver3\Car_v3\obj\Debug\Car_v3.pdb
+D:\car_1\Car_ver3\Car_v3\obj\Debug\Car_v3.ThongKe.resources

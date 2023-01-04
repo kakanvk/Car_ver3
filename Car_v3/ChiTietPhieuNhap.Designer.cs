@@ -90,6 +90,7 @@
             this.btn_luu.TabIndex = 19;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // cb_tenSanPham
             // 

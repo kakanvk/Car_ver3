@@ -33,6 +33,7 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            id = 0;
             check = 1;
             NSXMoi nSXMoi = new NSXMoi(this);
             nSXMoi.ShowDialog();
@@ -46,6 +47,11 @@ namespace Car_v3
             dgv_NSX.DataSource = tb;
             dgv_NSX.AllowUserToAddRows = false;
             dgv_NSX.EditMode = DataGridViewEditMode.EditProgrammatically;
+            if (id == 0)
+            {
+                btn_chiTiet.Enabled = false;
+                btn_sua.Enabled = false;
+            }
 
         }
 
@@ -71,6 +77,11 @@ namespace Car_v3
 
 
             id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
         }
     }
 }

@@ -255,7 +255,6 @@
             this.tb_timKiem.SelectedText = "";
             this.tb_timKiem.Size = new System.Drawing.Size(648, 45);
             this.tb_timKiem.TabIndex = 42;
-            this.tb_timKiem.Text = "   Tìm kiếm tên khách hàng";
             // 
             // PhieuNhap
             // 

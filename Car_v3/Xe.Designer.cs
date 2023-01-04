@@ -200,7 +200,6 @@
             this.btn_them.TabIndex = 27;
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_them.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaLabel1
             // 
@@ -255,7 +254,7 @@
             this.tb_timKiem.SelectedText = "";
             this.tb_timKiem.Size = new System.Drawing.Size(648, 45);
             this.tb_timKiem.TabIndex = 42;
-            this.tb_timKiem.Text = "   Tìm kiếm sản phẩm";
+            this.tb_timKiem.Text = "   ";
             // 
             // Xe
             // 

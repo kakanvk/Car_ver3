@@ -45,5 +45,15 @@ namespace Car_v3
             cb_tenSanPham.DisplayMember = "tensanpham";
             cb_tenSanPham.ValueMember = "masanpham";
         }
+
+        private void btn_luu_Click(object sender, EventArgs e)
+        {
+            if(tb_giaNhap.Text == "" || tb_soLuongNhap.Text == "" || cb_tenSanPham.Text == "")
+            {
+                MessageBox.Show("Nhập đủ thông tin");
+            }
+
+            
+        }
     }
 }
