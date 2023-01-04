@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,13 +66,36 @@ namespace Car_v3
             cb_tenNSX.DataSource = tb;
             cb_tenNSX.DisplayMember = "tenNSX";
             cb_tenNSX.ValueMember = "maNSX";
-            tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();
+            tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();           
 
         }
         public void HienThiDl_phieuNhapMoi()
         {
             string id = "";
             string query;
+
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
+            con.Open();
+            SqlCommand cmd1;
+            if (PhieuNhap.check == 3)
+            {
+                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap, SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where maphieunhap = "+PhieuNhap.id+" GROUP BY maphieunhap", con);
+
+            }
+            else
+            {
+                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap, SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where MAPHIEUNHAP = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP ) GROUP BY maphieunhap", con);
+
+            }
+            
+            SqlDataReader dr1 = cmd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                tb_tongThanhTien.Text = dr1.GetValue(1).ToString();
+
+            }
+
+
             if (PhieuNhap.check != 1)
             {
                 query = "select * from phieunhap where maphieunhap = "+PhieuNhap.id+"";
@@ -87,12 +111,23 @@ namespace Car_v3
             }
             string str = "select * from chitietnhap where maphieunhap ="+id+"";
             tb = help.LayBang(str);
+            con.Close();
             dgv_phieuNhapMoi.DataSource = tb;
 
         }
         private void btn_luu_Click(object sender, EventArgs e)
         {
-
+            string query;
+            if (PhieuNhap.check == 3)
+            {
+                query = "update phieunhap set ngayNhap =" + ngayNhap.Value + ", thanhtien = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap ="+ PhieuNhap.id + "";
+            }
+            else
+            {
+                query = "UPDATE PHIEUNHAP SET ngayNhap =" + ngayNhap.Value + ", thanhtien = " + tb_tongThanhTien.Text + " FROM PHIEUNHAP  WHERE MAPHIEUNHAP = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP ); ";
+            }
+            help.CapNhatDL(query);
+            MessageBox.Show(query);
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -128,9 +163,9 @@ namespace Car_v3
         {
             string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + " ";
             help.CapNhatDL(query);
-
-            HienThiDL();
             HienThiDl_phieuNhapMoi();
+            HienThiDL();
+            
         }
 
         private void dgv_phieuNhap_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -147,6 +182,12 @@ namespace Car_v3
             {
                 btn_sua.Enabled = true;
             }
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            ChiTietPhieuNhap phieuNhap = new ChiTietPhieuNhap(this);
+            phieuNhap.ShowDialog();
         }
     }
     

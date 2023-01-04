@@ -54,7 +54,7 @@ namespace Car_v3
             phieuNhap.ShowDialog();
         }
 
-        void HienthiDL()
+        public void HienthiDL()
         {
             string str = "select * from phieunhap";
             tb = help.LayBang(str);
@@ -73,6 +73,14 @@ namespace Car_v3
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            string str = "delete PHIEUNHAP where MAPHIEUNHAP ="+id+"";
+            help.CapNhatDL(str);
+            MessageBox.Show(str);
+            HienthiDL();
         }
     }
 }

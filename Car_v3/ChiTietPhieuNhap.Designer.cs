@@ -65,6 +65,7 @@
             this.btn_huy.TabIndex = 20;
             this.btn_huy.Text = "Huỷ";
             this.btn_huy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 

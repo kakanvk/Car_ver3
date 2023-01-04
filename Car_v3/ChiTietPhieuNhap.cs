@@ -81,7 +81,6 @@ namespace Car_v3
             
             str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
             help.CapNhatDL(str);
-           
             
             pnm.HienThiDl_phieuNhapMoi();
             this.Close();
@@ -123,6 +122,11 @@ namespace Car_v3
         private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
