@@ -17,6 +17,7 @@ namespace Car_v3
         help help = new help();
         DataTable tb;
         NSX NSX;
+        XeMoi xeMoi;
         public NSXMoi(NSX nSX)
         {
             InitializeComponent();
@@ -31,8 +32,24 @@ namespace Car_v3
             {
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
-            NSX = nSX;
         }
+
+        public NSXMoi(XeMoi _xm)
+        {
+            InitializeComponent();
+            xeMoi = _xm;
+            help = new help();
+            if (help.Mo_KN_CSDL())
+            {
+                HienThiDL();
+
+            }
+            else
+            {
+                MessageBox.Show("kết nối dữ liệu thất bại");
+            }
+        }
+
         string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
         
 
@@ -50,7 +67,8 @@ namespace Car_v3
             command.Parameters.AddWithValue("@image", image);
             command.CommandText = "insert into nsx values(N'" + tb_tenNSX.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "'," + tb_sdt.Text.Trim() + ",@image)";
             command.ExecuteNonQuery();
-            NSX.HienThiDL();
+            if(NSX!=null) NSX.HienThiDL();
+            if(xeMoi!=null) xeMoi.renderCbbNSX();
             this.Close();
             con.Close();
         }
@@ -111,6 +129,11 @@ namespace Car_v3
             {
                 PictureBox1.Image = new Bitmap(opnfd.FileName);
             }
+        }
+
+        private void NSXMoi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

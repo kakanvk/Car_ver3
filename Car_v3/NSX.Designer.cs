@@ -275,6 +275,7 @@
             this.Controls.Add(this.dgv_NSX);
             this.Name = "NSX";
             this.Text = "NSX";
+            this.Load += new System.EventHandler(this.NSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NSX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

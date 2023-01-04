@@ -79,5 +79,10 @@ namespace Car_v3
             dgv_loaiXe.AllowUserToAddRows = false;
             dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+
+        private void LoaiXe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Car_v3
 
         private void lb_themSanPham_Click(object sender, EventArgs e)
         {
-            XeMoi xe= new XeMoi();
+            XeMoi xe = new XeMoi();
             xe.ShowDialog();
         }
         void HienThiDL()

@@ -54,10 +54,8 @@ namespace Car_v3
             {
                if(NhanVien.check == 1)
                 {
-                    //SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
                     string query = "insert into nhanvien values (" + cb_chucVu.SelectedValue + ",N'" + tb_tenNhanVien.Text.Trim() + "','" + ns_nhanVien.Value + "',N'" + cb_gioiTinh.Text.Trim() + "'," + tb_sdt.Text + ",'" + tb_matKhau.Text.Trim() + "','" + tb_email.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "')";
                     help.CapNhatDL(query);
-                    //string query = "insert into nhanvien values (" + cb_chucVu.SelectedValue + ",N'" + tb_tenNhanVien.Text.Trim() + "','" + ns_nhanVien.Value + "',N'" + cb_gioiTinh.Text.Trim() + "'," + tb_sdt.Text + ",'" + tb_matKhau.Text.Trim() + "','" + tb_email.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "')";
 
 
                     nv.HienThiDL();
@@ -85,7 +83,7 @@ namespace Car_v3
             string str;
             int id_nhanvien_click = NhanVien.id;
             con.Open();
-            MessageBox.Show("" + id_nhanvien_click);
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM nhanvien where manhanvien = @id",con);
             cmd.Parameters.AddWithValue("@id",id_nhanvien_click);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -143,7 +141,8 @@ namespace Car_v3
                         tb_diaChi.Text = dr.GetValue(8).ToString();
                     }
 
-                str = "select * from phanquyen";
+                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
+
 
                 tb = help.LayBang(str);
                 cb_chucVu.DataSource = tb;
