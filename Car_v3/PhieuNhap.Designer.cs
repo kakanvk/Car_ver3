@@ -70,7 +70,7 @@
             this.dgv_phieuNhap.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_phieuNhap.EnableHeadersVisualStyles = false;
             this.dgv_phieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_phieuNhap.Location = new System.Drawing.Point(30, 154);
+            this.dgv_phieuNhap.Location = new System.Drawing.Point(30, 153);
             this.dgv_phieuNhap.Name = "dgv_phieuNhap";
             this.dgv_phieuNhap.RowHeadersVisible = false;
             this.dgv_phieuNhap.RowHeadersWidth = 62;
@@ -100,6 +100,7 @@
             this.dgv_phieuNhap.ThemeStyle.RowsStyle.Height = 28;
             this.dgv_phieuNhap.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_phieuNhap.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_phieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieuNhap_CellClick);
             // 
             // btn_xoa
             // 
@@ -150,6 +151,7 @@
             this.btn_sua.TabIndex = 7;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_chiTiet
             // 
@@ -175,6 +177,7 @@
             this.btn_chiTiet.TabIndex = 8;
             this.btn_chiTiet.Text = "Xem chi tiết";
             this.btn_chiTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chiTiet.Click += new System.EventHandler(this.btn_chiTiet_Click);
             // 
             // btn_them
             // 
@@ -200,7 +203,7 @@
             this.btn_them.TabIndex = 5;
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_them.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // gunaLabel1
             // 
@@ -271,6 +274,7 @@
             this.Controls.Add(this.gunaLabel1);
             this.Name = "PhieuNhap";
             this.Text = "PhieuNhap";
+            this.Load += new System.EventHandler(this.PhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieuNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
