@@ -31,9 +31,7 @@ namespace Car_v3
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
 
-        }
-
-        
+        } 
 
         public void HienThiDL()
         {
@@ -56,9 +54,6 @@ namespace Car_v3
 
         public static int id = 0;
         public static int check = 0;
-        
-
-
 
         private void btn_them_Click(object sender, EventArgs e)
         {
@@ -116,6 +111,11 @@ namespace Car_v3
                 btn_chiTiet.Enabled = true;
                 btn_sua.Enabled = true;
             }
+        }
+
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

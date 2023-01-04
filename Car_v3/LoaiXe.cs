@@ -91,5 +91,10 @@ namespace Car_v3
                 btn_sua.Enabled = false;
             }
         }
+
+        private void LoaiXe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

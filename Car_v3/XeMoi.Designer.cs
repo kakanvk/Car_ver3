@@ -53,6 +53,11 @@
             this.PictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.lb_themLoaiXe = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.cb_nsx = new Guna.UI.WinForms.GunaComboBox();
+            this.btn_themNSX = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
+            this.tb_soLuong = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +74,7 @@
             this.btn_huy.Image = null;
             this.btn_huy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_huy.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_huy.Location = new System.Drawing.Point(774, 529);
+            this.btn_huy.Location = new System.Drawing.Point(774, 630);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_huy.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -94,7 +99,7 @@
             this.btn_luu.Image = null;
             this.btn_luu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_luu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_luu.Location = new System.Drawing.Point(898, 529);
+            this.btn_luu.Location = new System.Drawing.Point(898, 630);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_luu.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -105,6 +110,7 @@
             this.btn_luu.TabIndex = 60;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // gunaLabel4
             // 
@@ -141,7 +147,7 @@
             this.tb_den.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tb_den.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_den.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_den.Location = new System.Drawing.Point(702, 134);
+            this.tb_den.Location = new System.Drawing.Point(712, 255);
             this.tb_den.Name = "tb_den";
             this.tb_den.PasswordChar = '\0';
             this.tb_den.SelectedText = "";
@@ -152,7 +158,7 @@
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(535, 142);
+            this.gunaLabel7.Location = new System.Drawing.Point(545, 263);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(46, 25);
             this.gunaLabel7.TabIndex = 49;
@@ -182,7 +188,7 @@
             this.tb_moTa.Name = "tb_moTa";
             this.tb_moTa.PasswordChar = '\0';
             this.tb_moTa.SelectedText = "";
-            this.tb_moTa.Size = new System.Drawing.Size(280, 86);
+            this.tb_moTa.Size = new System.Drawing.Size(280, 63);
             this.tb_moTa.TabIndex = 58;
             // 
             // tb_tenSanPham
@@ -241,7 +247,7 @@
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(535, 32);
+            this.gunaLabel6.Location = new System.Drawing.Point(545, 41);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(70, 25);
             this.gunaLabel6.TabIndex = 54;
@@ -258,10 +264,7 @@
             this.cb_loaiXe.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cb_loaiXe.ForeColor = System.Drawing.Color.Black;
             this.cb_loaiXe.FormattingEnabled = true;
-            this.cb_loaiXe.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cb_loaiXe.Location = new System.Drawing.Point(702, 26);
+            this.cb_loaiXe.Location = new System.Drawing.Point(712, 35);
             this.cb_loaiXe.Name = "cb_loaiXe";
             this.cb_loaiXe.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cb_loaiXe.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -272,7 +275,7 @@
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.Location = new System.Drawing.Point(535, 312);
+            this.gunaLabel8.Location = new System.Drawing.Point(545, 381);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(75, 25);
             this.gunaLabel8.TabIndex = 49;
@@ -287,7 +290,7 @@
             this.tb_giaBan.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tb_giaBan.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_giaBan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_giaBan.Location = new System.Drawing.Point(702, 304);
+            this.tb_giaBan.Location = new System.Drawing.Point(712, 373);
             this.tb_giaBan.Name = "tb_giaBan";
             this.tb_giaBan.PasswordChar = '\0';
             this.tb_giaBan.SelectedText = "";
@@ -298,7 +301,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.Location = new System.Drawing.Point(535, 255);
+            this.gunaLabel9.Location = new System.Drawing.Point(545, 324);
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(90, 25);
             this.gunaLabel9.TabIndex = 49;
@@ -313,7 +316,7 @@
             this.tb_soTuiKhi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tb_soTuiKhi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_soTuiKhi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_soTuiKhi.Location = new System.Drawing.Point(702, 247);
+            this.tb_soTuiKhi.Location = new System.Drawing.Point(712, 316);
             this.tb_soTuiKhi.Name = "tb_soTuiKhi";
             this.tb_soTuiKhi.PasswordChar = '\0';
             this.tb_soTuiKhi.SelectedText = "";
@@ -324,7 +327,7 @@
             // 
             this.gunaLabel10.AutoSize = true;
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.Location = new System.Drawing.Point(535, 197);
+            this.gunaLabel10.Location = new System.Drawing.Point(29, 324);
             this.gunaLabel10.Name = "gunaLabel10";
             this.gunaLabel10.Size = new System.Drawing.Size(71, 25);
             this.gunaLabel10.TabIndex = 49;
@@ -339,7 +342,7 @@
             this.tb_hopSo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tb_hopSo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_hopSo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_hopSo.Location = new System.Drawing.Point(702, 189);
+            this.tb_hopSo.Location = new System.Drawing.Point(196, 316);
             this.tb_hopSo.Name = "tb_hopSo";
             this.tb_hopSo.PasswordChar = '\0';
             this.tb_hopSo.SelectedText = "";
@@ -359,7 +362,7 @@
             this.btn_chonAnh.Image = ((System.Drawing.Image)(resources.GetObject("btn_chonAnh.Image")));
             this.btn_chonAnh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_chonAnh.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_chonAnh.Location = new System.Drawing.Point(196, 318);
+            this.btn_chonAnh.Location = new System.Drawing.Point(196, 378);
             this.btn_chonAnh.Name = "btn_chonAnh";
             this.btn_chonAnh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_chonAnh.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -370,14 +373,16 @@
             this.btn_chonAnh.TabIndex = 65;
             this.btn_chonAnh.Text = "Chọn ảnh";
             this.btn_chonAnh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chonAnh.Click += new System.EventHandler(this.btn_chonAnh_Click);
             // 
             // PictureBox1
             // 
             this.PictureBox1.BaseColor = System.Drawing.Color.White;
             this.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBox1.Location = new System.Drawing.Point(196, 381);
+            this.PictureBox1.Location = new System.Drawing.Point(196, 441);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(300, 184);
+            this.PictureBox1.Size = new System.Drawing.Size(280, 184);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 64;
             this.PictureBox1.TabStop = false;
             // 
@@ -385,7 +390,7 @@
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(29, 326);
+            this.gunaLabel11.Location = new System.Drawing.Point(29, 386);
             this.gunaLabel11.Name = "gunaLabel11";
             this.gunaLabel11.Size = new System.Drawing.Size(45, 25);
             this.gunaLabel11.TabIndex = 63;
@@ -397,22 +402,95 @@
             this.lb_themLoaiXe.BackColor = System.Drawing.Color.Transparent;
             this.lb_themLoaiXe.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_themLoaiXe.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lb_themLoaiXe.Location = new System.Drawing.Point(824, 76);
+            this.lb_themLoaiXe.Location = new System.Drawing.Point(834, 85);
             this.lb_themLoaiXe.Name = "lb_themLoaiXe";
             this.lb_themLoaiXe.Size = new System.Drawing.Size(158, 25);
             this.lb_themLoaiXe.TabIndex = 66;
             this.lb_themLoaiXe.Text = "Thêm loại xe khác";
             this.lb_themLoaiXe.Click += new System.EventHandler(this.lb_themLoaiXe_Click);
             // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(545, 147);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(119, 25);
+            this.gunaLabel1.TabIndex = 54;
+            this.gunaLabel1.Text = "Nhà sản xuất";
+            // 
+            // cb_nsx
+            // 
+            this.cb_nsx.BackColor = System.Drawing.Color.Transparent;
+            this.cb_nsx.BaseColor = System.Drawing.Color.White;
+            this.cb_nsx.BorderColor = System.Drawing.Color.Silver;
+            this.cb_nsx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_nsx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_nsx.FocusedColor = System.Drawing.Color.Empty;
+            this.cb_nsx.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_nsx.ForeColor = System.Drawing.Color.Black;
+            this.cb_nsx.FormattingEnabled = true;
+            this.cb_nsx.Location = new System.Drawing.Point(712, 141);
+            this.cb_nsx.Name = "cb_nsx";
+            this.cb_nsx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cb_nsx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cb_nsx.Size = new System.Drawing.Size(280, 35);
+            this.cb_nsx.TabIndex = 62;
+            // 
+            // btn_themNSX
+            // 
+            this.btn_themNSX.AutoSize = true;
+            this.btn_themNSX.BackColor = System.Drawing.Color.Transparent;
+            this.btn_themNSX.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themNSX.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_themNSX.Location = new System.Drawing.Point(784, 193);
+            this.btn_themNSX.Name = "btn_themNSX";
+            this.btn_themNSX.Size = new System.Drawing.Size(208, 25);
+            this.btn_themNSX.TabIndex = 66;
+            this.btn_themNSX.Text = "Thêm nhà sản xuất khác";
+            this.btn_themNSX.Click += new System.EventHandler(this.btn_themNSX_Click);
+            // 
+            // gunaLabel12
+            // 
+            this.gunaLabel12.AutoSize = true;
+            this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel12.Location = new System.Drawing.Point(545, 441);
+            this.gunaLabel12.Name = "gunaLabel12";
+            this.gunaLabel12.Size = new System.Drawing.Size(87, 25);
+            this.gunaLabel12.TabIndex = 49;
+            this.gunaLabel12.Text = "Số lượng";
+            this.gunaLabel12.Click += new System.EventHandler(this.gunaLabel12_Click);
+            // 
+            // tb_soLuong
+            // 
+            this.tb_soLuong.BaseColor = System.Drawing.Color.White;
+            this.tb_soLuong.BorderColor = System.Drawing.Color.Silver;
+            this.tb_soLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_soLuong.Enabled = false;
+            this.tb_soLuong.FocusedBaseColor = System.Drawing.Color.White;
+            this.tb_soLuong.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tb_soLuong.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.tb_soLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_soLuong.Location = new System.Drawing.Point(712, 433);
+            this.tb_soLuong.Name = "tb_soLuong";
+            this.tb_soLuong.PasswordChar = '\0';
+            this.tb_soLuong.SelectedText = "";
+            this.tb_soLuong.Size = new System.Drawing.Size(280, 40);
+            this.tb_soLuong.TabIndex = 56;
+            this.tb_soLuong.Text = "0";
+            this.tb_soLuong.TextChanged += new System.EventHandler(this.gunaTextBox1_TextChanged);
+            // 
             // XeMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 597);
+            this.ClientSize = new System.Drawing.Size(1023, 704);
+            this.Controls.Add(this.btn_themNSX);
             this.Controls.Add(this.lb_themLoaiXe);
             this.Controls.Add(this.btn_chonAnh);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.gunaLabel11);
+            this.Controls.Add(this.cb_nsx);
             this.Controls.Add(this.cb_loaiXe);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_luu);
@@ -422,6 +500,8 @@
             this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.tb_soTuiKhi);
             this.Controls.Add(this.gunaLabel9);
+            this.Controls.Add(this.tb_soLuong);
+            this.Controls.Add(this.gunaLabel12);
             this.Controls.Add(this.tb_giaBan);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.tb_den);
@@ -430,11 +510,13 @@
             this.Controls.Add(this.tb_moTa);
             this.Controls.Add(this.tb_tenSanPham);
             this.Controls.Add(this.tb_dongCo);
+            this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.gunaLabel5);
             this.Name = "XeMoi";
             this.Text = "XeMoi";
+            this.Load += new System.EventHandler(this.XeMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -466,5 +548,10 @@
         private Guna.UI.WinForms.GunaPictureBox PictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel11;
         private Guna.UI.WinForms.GunaLabel lb_themLoaiXe;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaComboBox cb_nsx;
+        private Guna.UI.WinForms.GunaLabel btn_themNSX;
+        private Guna.UI.WinForms.GunaLabel gunaLabel12;
+        private Guna.UI.WinForms.GunaTextBox tb_soLuong;
     }
 }

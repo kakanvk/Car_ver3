@@ -16,7 +16,8 @@ namespace Car_v3
     {
         LoaiXe LoaiXe;
         XeMoi XeMoi;
-        help help = new help(); 
+        help help = new help();
+        bool checkFormXeMoi = false;
        
         public LoaiXeMoi(LoaiXe _loaiXe)
         {
@@ -35,6 +36,7 @@ namespace Car_v3
         public LoaiXeMoi(XeMoi _xeMoi)
         {
             XeMoi = _xeMoi;
+            checkFormXeMoi = true;
             InitializeComponent();
         }
 
@@ -46,6 +48,8 @@ namespace Car_v3
                 MessageBox.Show("Nhập đủ thông tin!!!");
                 return;
             }
+
+
             SqlConnection con = new SqlConnection(str);
             con.Open();
             SqlCommand command = con.CreateCommand();
@@ -58,7 +62,8 @@ namespace Car_v3
                 command.CommandText = "update loaixe set tenloai = N'" + tb_tenLoai.Text.Trim() + "' where maloai = "+LoaiXe.id+"";
             }
             command.ExecuteNonQuery();
-            LoaiXe.HienThiDL();
+            if(LoaiXe!=null) LoaiXe.HienThiDL();
+            if (this.checkFormXeMoi) XeMoi.renderCbbLoaiXe();
             this.Close();
             con.Close();
         }
@@ -97,6 +102,11 @@ namespace Car_v3
                 }
             }
             con.Close();
+        }
+
+        private void LoaiXeMoi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

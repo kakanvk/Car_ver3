@@ -83,5 +83,10 @@ namespace Car_v3
                 btn_sua.Enabled = true;
             }
         }
+
+        private void NSX_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

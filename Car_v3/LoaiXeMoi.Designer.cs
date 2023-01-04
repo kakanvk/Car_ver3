@@ -122,6 +122,7 @@
             this.Controls.Add(this.gunaLabel2);
             this.Name = "LoaiXeMoi";
             this.Text = "LoaiXeMoi";
+            this.Load += new System.EventHandler(this.LoaiXeMoi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
