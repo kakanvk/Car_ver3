@@ -151,6 +151,7 @@
             this.tb_giaNhap.SelectedText = "";
             this.tb_giaNhap.Size = new System.Drawing.Size(280, 40);
             this.tb_giaNhap.TabIndex = 16;
+            this.tb_giaNhap.TextChanged += new System.EventHandler(this.tb_giaNhap_TextChanged);
             // 
             // gunaLabel3
             // 
@@ -177,6 +178,7 @@
             this.tb_soLuongNhap.SelectedText = "";
             this.tb_soLuongNhap.Size = new System.Drawing.Size(280, 40);
             this.tb_soLuongNhap.TabIndex = 17;
+            this.tb_soLuongNhap.TextChanged += new System.EventHandler(this.tb_soLuongNhap_TextChanged);
             // 
             // gunaLabel2
             // 
