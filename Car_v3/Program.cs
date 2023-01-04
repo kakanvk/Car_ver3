@@ -16,7 +16,7 @@ namespace Car_v3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Xe());
+            Application.Run(new Login());
         }
     }
 }

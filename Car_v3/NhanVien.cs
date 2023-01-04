@@ -44,6 +44,11 @@ namespace Car_v3
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgv_nhanVien.Columns[1].HeaderText = "Tên nhân viên";
             dgv_nhanVien.Columns[0].HeaderText = "Mã nhân viên";
+            if (id == 0)
+            {
+                btn_chiTiet.Enabled = false;
+                btn_sua.Enabled = false;
+            }
         }
 
 
@@ -52,6 +57,7 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            id = 0;
             check = 1;
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
             nhanVienMoi.ShowDialog();
@@ -86,14 +92,7 @@ namespace Car_v3
         {
             (dgv_nhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenNhanVien LIKE '%{0}%' or diachiNhanVien like '%{0}%'", tb_timKiem.Text);
         }
-        void KetQuaTimKiem()
-        {
-            
-            dgv_nhanVien.DataSource = tb;
-            dgv_nhanVien.AllowUserToAddRows = false;
-            dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
-
-        }
+        
         private void btn_timKiem_Click(object sender, EventArgs e)
         {
 
@@ -107,6 +106,11 @@ namespace Car_v3
 
 
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
         }
 
         private void NhanVien_Load(object sender, EventArgs e)

@@ -53,7 +53,14 @@ namespace Car_v3
             SqlConnection con = new SqlConnection(str);
             con.Open();
             SqlCommand command = con.CreateCommand();
-            command.CommandText = "insert into loaixe values(N'"+tb_tenLoai.Text.Trim()+"')";
+           if(LoaiXe.check == 1)
+            {
+                command.CommandText = "insert into loaixe values(N'" + tb_tenLoai.Text.Trim() + "')";
+            }
+            else
+            {
+                command.CommandText = "update loaixe set tenloai = N'" + tb_tenLoai.Text.Trim() + "' where maloai = "+LoaiXe.id+"";
+            }
             command.ExecuteNonQuery();
             if(LoaiXe!=null) LoaiXe.HienThiDL();
             if (this.checkFormXeMoi) XeMoi.renderCbbLoaiXe();
@@ -71,6 +78,7 @@ namespace Car_v3
             SqlCommand cmd = new SqlCommand("SELECT * FROM loaixe where maloai = @id", con);
             cmd.Parameters.AddWithValue("@id", id_loaiXE);
             SqlDataReader dr = cmd.ExecuteReader();
+            
             if (LoaiXe.check == 1)
             {
 
@@ -90,6 +98,7 @@ namespace Car_v3
                 while (dr.Read())
                 {
                     tb_tenLoai.Text = dr.GetValue(1).ToString();
+
                 }
             }
             con.Close();

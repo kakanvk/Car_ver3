@@ -32,6 +32,7 @@ namespace Car_v3
         public static int id = 0;
         private void btn_them_Click(object sender, EventArgs e)
         {
+            id = 0;
             check = 1;
             LoaiXeMoi xe = new LoaiXeMoi(this);
             xe.ShowDialog();
@@ -39,6 +40,7 @@ namespace Car_v3
 
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
+            
             check = 2;
             LoaiXeMoi xe = new LoaiXeMoi(this);
             xe.ShowDialog();
@@ -68,6 +70,11 @@ namespace Car_v3
 
 
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
         }
         public void HienThiDL()
         {
@@ -78,6 +85,11 @@ namespace Car_v3
             dgv_loaiXe.DataSource = tb;
             dgv_loaiXe.AllowUserToAddRows = false;
             dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
+            if (id == 0)
+            {
+                btn_chiTiet.Enabled = false;
+                btn_sua.Enabled = false;
+            }
         }
 
         private void LoaiXe_Load(object sender, EventArgs e)
