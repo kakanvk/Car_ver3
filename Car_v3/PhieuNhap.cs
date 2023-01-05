@@ -36,7 +36,7 @@ namespace Car_v3
         {
             id = 0;
             check = 1;
-            PhieuNhapMoi phieuNhap = new PhieuNhapMoi();
+            PhieuNhapMoi phieuNhap = new PhieuNhapMoi(this);
             phieuNhap.ShowDialog();
         }
         int id_phieuNhap_cellclick;
@@ -60,7 +60,7 @@ namespace Car_v3
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
             check = 2;
-            PhieuNhapMoi phieuNhap = new PhieuNhapMoi();
+            PhieuNhapMoi phieuNhap = new PhieuNhapMoi(this);
             phieuNhap.ShowDialog();
         }
 
@@ -76,7 +76,7 @@ namespace Car_v3
         private void btn_sua_Click(object sender, EventArgs e)
         {
             check = 3;
-            PhieuNhapMoi phieuNhap = new PhieuNhapMoi();
+            PhieuNhapMoi phieuNhap = new PhieuNhapMoi(this);
             phieuNhap.ShowDialog();
         }
 

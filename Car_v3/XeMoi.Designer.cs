@@ -56,8 +56,6 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cb_nsx = new Guna.UI.WinForms.GunaComboBox();
             this.btn_themNSX = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
-            this.tb_soLuong = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -450,36 +448,6 @@
             this.btn_themNSX.Text = "Thêm nhà sản xuất khác";
             this.btn_themNSX.Click += new System.EventHandler(this.btn_themNSX_Click);
             // 
-            // gunaLabel12
-            // 
-            this.gunaLabel12.AutoSize = true;
-            this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel12.Location = new System.Drawing.Point(545, 441);
-            this.gunaLabel12.Name = "gunaLabel12";
-            this.gunaLabel12.Size = new System.Drawing.Size(87, 25);
-            this.gunaLabel12.TabIndex = 49;
-            this.gunaLabel12.Text = "Số lượng";
-            this.gunaLabel12.Click += new System.EventHandler(this.gunaLabel12_Click);
-            // 
-            // tb_soLuong
-            // 
-            this.tb_soLuong.BaseColor = System.Drawing.Color.White;
-            this.tb_soLuong.BorderColor = System.Drawing.Color.Silver;
-            this.tb_soLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_soLuong.Enabled = false;
-            this.tb_soLuong.FocusedBaseColor = System.Drawing.Color.White;
-            this.tb_soLuong.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.tb_soLuong.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.tb_soLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_soLuong.Location = new System.Drawing.Point(712, 433);
-            this.tb_soLuong.Name = "tb_soLuong";
-            this.tb_soLuong.PasswordChar = '\0';
-            this.tb_soLuong.SelectedText = "";
-            this.tb_soLuong.Size = new System.Drawing.Size(280, 40);
-            this.tb_soLuong.TabIndex = 56;
-            this.tb_soLuong.Text = "0";
-            this.tb_soLuong.TextChanged += new System.EventHandler(this.gunaTextBox1_TextChanged);
-            // 
             // XeMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -500,8 +468,6 @@
             this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.tb_soTuiKhi);
             this.Controls.Add(this.gunaLabel9);
-            this.Controls.Add(this.tb_soLuong);
-            this.Controls.Add(this.gunaLabel12);
             this.Controls.Add(this.tb_giaBan);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.tb_den);
@@ -551,7 +517,5 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaComboBox cb_nsx;
         private Guna.UI.WinForms.GunaLabel btn_themNSX;
-        private Guna.UI.WinForms.GunaLabel gunaLabel12;
-        private Guna.UI.WinForms.GunaTextBox tb_soLuong;
     }
 }

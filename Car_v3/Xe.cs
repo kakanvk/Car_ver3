@@ -92,6 +92,10 @@ namespace Car_v3
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
         }
 
-        
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_xe.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenSanPham LIKE '%{0}%' or mau like '%{0}%'", tb_timKiem.Text);
+
+        }
     }
 }

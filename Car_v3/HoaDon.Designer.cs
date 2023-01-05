@@ -58,6 +58,7 @@
             this.tb_timKiem.SelectedText = "";
             this.tb_timKiem.Size = new System.Drawing.Size(648, 45);
             this.tb_timKiem.TabIndex = 50;
+            this.tb_timKiem.TextChanged += new System.EventHandler(this.tb_timKiem_TextChanged);
             // 
             // dgv_hoaDon
             // 

@@ -21,10 +21,12 @@ namespace Car_v3
         public static int check = 0;
         int id_phieuNhap_cellclick;
         int id_sanPham_cellclick;
+        PhieuNhap pn;
 
         Boolean checkthem = true;
-        public PhieuNhapMoi()
+        public PhieuNhapMoi(PhieuNhap _pn)
         {
+            pn = _pn;
             InitializeComponent();
            
             if (help.Mo_KN_CSDL())
@@ -128,17 +130,28 @@ namespace Car_v3
         }
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            string query;
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
+            con.Open();
+            SqlCommand command = con.CreateCommand();
             if (PhieuNhap.check == 3)
             {
-                query = "update phieunhap set ngayNhap =" + ngayNhap.Value + ", thanhtien = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap ="+ PhieuNhap.id + "";
+                command.CommandText = "update phieunhap set ngayNhap ='"+ngayNhap.Value+"',thanhtiennhap = " + tb_tongThanhTien.Text + "  from phieunhap where maphieunhap =" + PhieuNhap.id + "";
+                MessageBox.Show(command.CommandText);
+                command.ExecuteNonQuery();
             }
             else
             {
-                query = "UPDATE PHIEUNHAP SET ngayNhap =" + ngayNhap.Value + ", thanhtien = " + tb_tongThanhTien.Text + " FROM PHIEUNHAP  WHERE MAPHIEUNHAP = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP ); ";
+                command.CommandText = "update phieunhap set  ngayNhap ='"+ngayNhap.Value+"'  thanhtiennhap = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP )";
+                MessageBox.Show(command.CommandText);
+                command.ExecuteNonQuery();
+                
             }
-            help.CapNhatDL(query);
-            MessageBox.Show(query);
+            
+            pn.HienthiDL();
+            this.Close();
+
+            con.Close();
+            
         }
 
         private void btn_them_Click(object sender, EventArgs e)

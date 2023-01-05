@@ -62,7 +62,7 @@ namespace Car_v3
             {
                 MessageBox.Show("Nhập đủ thông tin");
             }
-
+            MessageBox.Show("" + PhieuNhap.check);
             if (PhieuNhap.check == 3)
             {
                 query = "select maphieunhap from phieunhap where maphieunhap = "+PhieuNhap.id+"";
@@ -78,7 +78,6 @@ namespace Car_v3
             {
                 id = dr[0].ToString();
             }
-            MessageBox.Show(id);
             
             str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
             help.CapNhatDL(str);

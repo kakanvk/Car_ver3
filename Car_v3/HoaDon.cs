@@ -75,6 +75,13 @@ namespace Car_v3
             dgv_hoaDon.AllowUserToAddRows = false;
             dgv_hoaDon.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_hoaDon.DataSource as DataTable).DefaultView.RowFilter = string.Format("diachigiao LIKE '%{0}%' or trangthai like '%{0}%' or ghichu like '%{0}%'", tb_timKiem.Text);
+
+        }
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             id = 0;

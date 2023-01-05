@@ -93,5 +93,11 @@ namespace Car_v3
         {
 
         }
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_NSX.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenNSX LIKE '%{0}%' or diachiNSX like '%{0}%'", tb_timKiem.Text);
+
+        }
     }
 }
