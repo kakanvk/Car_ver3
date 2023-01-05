@@ -27,7 +27,6 @@ namespace Car_v3
             help = new help();
             if (help.Mo_KN_CSDL())
             {
-                MessageBox.Show(""+NhanVien.check);
                 HienThiDL();
             }
             else
@@ -55,10 +54,8 @@ namespace Car_v3
             {
                if(NhanVien.check == 1)
                 {
-                    //SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
                     string query = "insert into nhanvien values (" + cb_chucVu.SelectedValue + ",N'" + tb_tenNhanVien.Text.Trim() + "','" + ns_nhanVien.Value + "',N'" + cb_gioiTinh.Text.Trim() + "'," + tb_sdt.Text + ",'" + tb_matKhau.Text.Trim() + "','" + tb_email.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "')";
                     help.CapNhatDL(query);
-                    //string query = "insert into nhanvien values (" + cb_chucVu.SelectedValue + ",N'" + tb_tenNhanVien.Text.Trim() + "','" + ns_nhanVien.Value + "',N'" + cb_gioiTinh.Text.Trim() + "'," + tb_sdt.Text + ",'" + tb_matKhau.Text.Trim() + "','" + tb_email.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "')";
 
 
                     nv.HienThiDL();
@@ -72,11 +69,7 @@ namespace Car_v3
 
                     nv.HienThiDL();
                     this.Close();
-                    }
-                    
-                                
-                
-
+                    }                                           
             }
             catch
             {
@@ -90,7 +83,7 @@ namespace Car_v3
             string str;
             int id_nhanvien_click = NhanVien.id;
             con.Open();
-            
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM nhanvien where manhanvien = @id",con);
             cmd.Parameters.AddWithValue("@id",id_nhanvien_click);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -111,20 +104,20 @@ namespace Car_v3
                     while (dr.Read())
                     {
                         tb_tenNhanVien.Text = dr.GetValue(2).ToString();
-                        ns_nhanVien.Text = dr.GetValue(3).ToString();
+                        ns_nhanVien.Value = DateTime.Parse(dr.GetValue(3).ToString());
                         cb_gioiTinh.Text = dr.GetValue(4).ToString();
                         tb_sdt.Text = dr.GetValue(5).ToString();
                         tb_matKhau.Text = dr.GetValue(6).ToString();
                         tb_email.Text = dr.GetValue(7).ToString();
                         tb_diaChi.Text = dr.GetValue(8).ToString();
 
-                        tb_tenNhanVien.ReadOnly = true;
+                        tb_tenNhanVien.Enabled = false;
                         this.ns_nhanVien.Enabled = false;
                         cb_gioiTinh.Enabled = false;
-                        tb_sdt.ReadOnly = true;
-                        tb_matKhau.ReadOnly = true;
-                        tb_email.ReadOnly = true;
-                        tb_diaChi.ReadOnly = true;
+                        tb_sdt.Enabled = false;
+                        tb_matKhau.Enabled = false;
+                        tb_email.Enabled = false;
+                        tb_diaChi.Enabled = false;
                         btn_luu.Enabled = false;
                     }
                 str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
@@ -148,7 +141,8 @@ namespace Car_v3
                         tb_diaChi.Text = dr.GetValue(8).ToString();
                     }
 
-                str = "select * from phanquyen";
+                str = "select tenphanquyen, phanquyen.maphanquyen from nhanvien , phanquyen where nhanvien.manhanvien = " + id_nhanvien_click + " and phanquyen.maphanquyen = nhanvien.maphanquyen";
+
 
                 tb = help.LayBang(str);
                 cb_chucVu.DataSource = tb;

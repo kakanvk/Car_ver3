@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Car_v3
 {
@@ -29,39 +31,33 @@ namespace Car_v3
                 MessageBox.Show("kết nối dữ liệu thất bại");
             }
 
-        }
-
-        
+        } 
 
         public void HienThiDL()
         {
 
-            string str = "select maNhanVien , tenNhanVien as 'Tên Nhân Viên', diachiNhanVien as 'Địa Chỉ', sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
+            string str = "select maNhanVien , tenNhanVien , diachiNhanVien , sdtNhanVien as 'SĐT', nhanvien.maphanquyen as 'Chức Vụ'from nhanvien,phanquyen where phanquyen.maphanquyen= nhanvien.maphanquyen order by manhanvien";
             //str = "select a.MANHANVIEN , B.TENPHANQUYEN FROM NHANVIEN AS a ,PHANQUYEN AS b where a.MAPHANQUYEN = b.MAPHANQUYEN;";
             tb = help.LayBang(str);
             dgv_nhanVien.DataSource = tb;
             dgv_nhanVien.AllowUserToAddRows = false;
             dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv_nhanVien.Columns[1].HeaderText = "Tên nhân viên";
+            dgv_nhanVien.Columns[0].HeaderText = "Mã nhân viên";
+            if (id == 0)
+            {
+                btn_chiTiet.Enabled = false;
+                btn_sua.Enabled = false;
+            }
         }
 
 
         public static int id = 0;
         public static int check = 0;
-        private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
-
-            dgv_nhanVien.CurrentRow.Selected = true;
-
-
-           id = Convert.ToInt32(row.Cells["MANHANVIEN"].Value.ToString());
-           
-        }
-
-
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            id = 0;
             check = 1;
             NhanVienMoi nhanVienMoi = new NhanVienMoi(this);
             nhanVienMoi.ShowDialog();
@@ -89,6 +85,38 @@ namespace Car_v3
             help.CapNhatDL(query);
 
             HienThiDL();
+        }
+        string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_nhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenNhanVien LIKE '%{0}%' or diachiNhanVien like '%{0}%'", tb_timKiem.Text);
+        }
+        
+        private void btn_timKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_nhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
+
+            dgv_nhanVien.CurrentRow.Selected = true;
+            dgv_nhanVien.AllowUserToAddRows = false;
+            dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
+        }
+
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

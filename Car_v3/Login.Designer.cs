@@ -42,10 +42,12 @@
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::Car_v3.Properties.Resources.Picture2__1_;
             this.gunaPictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.InitialImage")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(53, 55);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(398, 547);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(326, 465);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 13;
             this.gunaPictureBox1.TabStop = false;
             // 
@@ -105,7 +107,7 @@
             this.tb_matKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_matKhau.Location = new System.Drawing.Point(436, 310);
             this.tb_matKhau.Name = "tb_matKhau";
-            this.tb_matKhau.PasswordChar = '\0';
+            this.tb_matKhau.PasswordChar = '*';
             this.tb_matKhau.SelectedText = "";
             this.tb_matKhau.Size = new System.Drawing.Size(359, 40);
             this.tb_matKhau.TabIndex = 8;

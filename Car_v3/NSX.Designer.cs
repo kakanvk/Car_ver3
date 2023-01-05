@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_xoa = new Guna.UI.WinForms.GunaButton();
             this.btn_sua = new Guna.UI.WinForms.GunaButton();
             this.btn_chiTiet = new Guna.UI.WinForms.GunaButton();
             this.btn_them = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgv_NSX = new Guna.UI.WinForms.GunaDataGridView();
+            this.btn_timKiem = new Guna.UI.WinForms.GunaButton();
+            this.tb_timKiem = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NSX)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.btn_xoa.Image = null;
             this.btn_xoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_xoa.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_xoa.Location = new System.Drawing.Point(477, 418);
+            this.btn_xoa.Location = new System.Drawing.Point(483, 531);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_xoa.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -64,6 +66,7 @@
             this.btn_xoa.TabIndex = 10;
             this.btn_xoa.Text = "Xoá";
             this.btn_xoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -78,7 +81,7 @@
             this.btn_sua.Image = null;
             this.btn_sua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_sua.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_sua.Location = new System.Drawing.Point(350, 418);
+            this.btn_sua.Location = new System.Drawing.Point(356, 531);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_sua.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,6 +92,7 @@
             this.btn_sua.TabIndex = 11;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_chiTiet
             // 
@@ -103,7 +107,7 @@
             this.btn_chiTiet.Image = null;
             this.btn_chiTiet.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_chiTiet.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_chiTiet.Location = new System.Drawing.Point(164, 418);
+            this.btn_chiTiet.Location = new System.Drawing.Point(170, 531);
             this.btn_chiTiet.Name = "btn_chiTiet";
             this.btn_chiTiet.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_chiTiet.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -114,6 +118,7 @@
             this.btn_chiTiet.TabIndex = 12;
             this.btn_chiTiet.Text = "Xem chi tiết";
             this.btn_chiTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_chiTiet.Click += new System.EventHandler(this.btn_chiTiet_Click);
             // 
             // btn_them
             // 
@@ -128,7 +133,7 @@
             this.btn_them.Image = null;
             this.btn_them.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_them.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_them.Location = new System.Drawing.Point(27, 418);
+            this.btn_them.Location = new System.Drawing.Point(33, 531);
             this.btn_them.Name = "btn_them";
             this.btn_them.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_them.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -145,7 +150,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(22, 22);
+            this.gunaLabel1.Location = new System.Drawing.Point(28, 135);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(246, 30);
             this.gunaLabel1.TabIndex = 8;
@@ -153,33 +158,33 @@
             // 
             // dgv_NSX
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_NSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_NSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_NSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NSX.BackgroundColor = System.Drawing.Color.White;
             this.dgv_NSX.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_NSX.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_NSX.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_NSX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_NSX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_NSX.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_NSX.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_NSX.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_NSX.EnableHeadersVisualStyles = false;
             this.dgv_NSX.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_NSX.Location = new System.Drawing.Point(27, 75);
+            this.dgv_NSX.Location = new System.Drawing.Point(33, 188);
             this.dgv_NSX.Name = "dgv_NSX";
             this.dgv_NSX.RowHeadersVisible = false;
             this.dgv_NSX.RowHeadersWidth = 62;
@@ -211,11 +216,58 @@
             this.dgv_NSX.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_NSX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NSX_CellClick);
             // 
+            // btn_timKiem
+            // 
+            this.btn_timKiem.AnimationHoverSpeed = 0.07F;
+            this.btn_timKiem.AnimationSpeed = 0.03F;
+            this.btn_timKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btn_timKiem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.BorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_timKiem.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_timKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timKiem.ForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.Image = global::Car_v3.Properties.Resources.Picture2;
+            this.btn_timKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_timKiem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_timKiem.Location = new System.Drawing.Point(706, 53);
+            this.btn_timKiem.Name = "btn_timKiem";
+            this.btn_timKiem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_timKiem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_timKiem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_timKiem.OnHoverImage = null;
+            this.btn_timKiem.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_timKiem.Radius = 2;
+            this.btn_timKiem.Size = new System.Drawing.Size(157, 45);
+            this.btn_timKiem.TabIndex = 43;
+            this.btn_timKiem.Text = "Tìm kiếm";
+            this.btn_timKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tb_timKiem
+            // 
+            this.tb_timKiem.BaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.BorderColor = System.Drawing.Color.Silver;
+            this.tb_timKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_timKiem.FocusedBaseColor = System.Drawing.Color.White;
+            this.tb_timKiem.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tb_timKiem.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.tb_timKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_timKiem.Location = new System.Drawing.Point(33, 53);
+            this.tb_timKiem.Name = "tb_timKiem";
+            this.tb_timKiem.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.tb_timKiem.PasswordChar = '\0';
+            this.tb_timKiem.SelectedText = "";
+            this.tb_timKiem.Size = new System.Drawing.Size(648, 45);
+            this.tb_timKiem.TabIndex = 42;
+            this.tb_timKiem.TextChanged += new System.EventHandler(this.tb_timKiem_TextChanged);
+            // 
             // NSX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 494);
+            this.ClientSize = new System.Drawing.Size(875, 604);
+            this.Controls.Add(this.btn_timKiem);
+            this.Controls.Add(this.tb_timKiem);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_chiTiet);
@@ -224,6 +276,7 @@
             this.Controls.Add(this.dgv_NSX);
             this.Name = "NSX";
             this.Text = "NSX";
+            this.Load += new System.EventHandler(this.NSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NSX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,5 +291,7 @@
         private Guna.UI.WinForms.GunaButton btn_them;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaDataGridView dgv_NSX;
+        private Guna.UI.WinForms.GunaButton btn_timKiem;
+        private Guna.UI.WinForms.GunaTextBox tb_timKiem;
     }
 }

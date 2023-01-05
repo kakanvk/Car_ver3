@@ -14,6 +14,7 @@ namespace Car_v3
     {
         help help = new help();
         DataTable tb;
+        public static int check = 0;
         public NSX()
         {
             InitializeComponent();
@@ -32,10 +33,42 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            NSXMoi nSXMoi = new NSXMoi();
-            nSXMoi.Show();
+            id = 0;
+            check = 1;
+            NSXMoi nSXMoi = new NSXMoi(this);
+            nSXMoi.ShowDialog();
         }
         public static int id = 0;
+        
+        public void HienThiDL()
+        {
+            string str = "select * from nsx";
+            tb = help.LayBang(str);
+            dgv_NSX.DataSource = tb;
+            dgv_NSX.AllowUserToAddRows = false;
+            dgv_NSX.EditMode = DataGridViewEditMode.EditProgrammatically;
+            if (id == 0)
+            {
+                btn_chiTiet.Enabled = false;
+                btn_sua.Enabled = false;
+            }
+
+        }
+
+        private void btn_chiTiet_Click(object sender, EventArgs e)
+        {
+            check = 2;
+            NSXMoi nSXMoi = new NSXMoi(this);
+            nSXMoi.ShowDialog();
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            check = 3;
+            NSXMoi nSXMoi = new NSXMoi(this);
+            nSXMoi.ShowDialog();
+        }
+
         private void dgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_NSX.Rows[e.RowIndex];
@@ -44,14 +77,26 @@ namespace Car_v3
 
 
             id = Convert.ToInt32(row.Cells["maNSX"].Value.ToString());
+            if (id != 0)
+            {
+                btn_chiTiet.Enabled = true;
+                btn_sua.Enabled = true;
+            }
         }
-        void HienThiDL()
+
+        private void NSX_Load(object sender, EventArgs e)
         {
-            string str = "select * from nsx";
-            tb = help.LayBang(str);
-            dgv_NSX.DataSource = tb;
-            dgv_NSX.AllowUserToAddRows = false;
-            dgv_NSX.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_NSX.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenNSX LIKE '%{0}%' or diachiNSX like '%{0}%'", tb_timKiem.Text);
 
         }
     }
