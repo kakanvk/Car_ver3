@@ -39,14 +39,14 @@ namespace Car_v3
             PhieuNhapMoi phieuNhap = new PhieuNhapMoi();
             phieuNhap.ShowDialog();
         }
-        int id_sanPham_cellclick;
+        int id_phieuNhap_cellclick;
         private void dgv_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_phieuNhap.Rows[e.RowIndex];
 
             dgv_phieuNhap.CurrentRow.Selected = true;
 
-            id_sanPham_cellclick = Convert.ToInt32(row.Cells["maPhieunhap"].Value.ToString());
+            id_phieuNhap_cellclick = Convert.ToInt32(row.Cells["maPhieunhap"].Value.ToString());
 
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
             if (id != 0)
@@ -88,7 +88,7 @@ namespace Car_v3
         private void btn_xoa_Click(object sender, EventArgs e)
         {
 
-            string str = "delete PHIEUNHAP where MAPHIEUNHAP =" + id_sanPham_cellclick + "";
+            string str = "delete PHIEUNHAP where MAPHIEUNHAP =" + id_phieuNhap_cellclick + "";
             help.CapNhatDL(str);
             HienthiDL();
         }

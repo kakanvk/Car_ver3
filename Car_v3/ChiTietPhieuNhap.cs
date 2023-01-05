@@ -18,6 +18,7 @@ namespace Car_v3
         help help = new help();
         DataTable tb = new DataTable();
         PhieuNhapMoi pnm;
+        
         public ChiTietPhieuNhap(PhieuNhapMoi _pnm)
         {
             InitializeComponent();
@@ -85,13 +86,6 @@ namespace Car_v3
             pnm.HienThiDl_phieuNhapMoi();
             this.Close();
 
-
-
-
-
-            
-
-
         }
         private void tb_giaNhap_TextChanged(object sender, EventArgs e)
         {
@@ -113,6 +107,7 @@ namespace Car_v3
             bool isBValid = int.TryParse(tb_soLuongNhap.Text, out b);
 
             if (isAValid && isBValid)
+                
                 tb_thanhTien.Text = (a * b).ToString();
 
             else

@@ -36,7 +36,7 @@
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaButton7 = new Guna.UI.WinForms.GunaButton();
+            this.btn_hoaDon = new Guna.UI.WinForms.GunaButton();
             this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
             this.btn_nhanVien = new Guna.UI.WinForms.GunaButton();
@@ -224,7 +224,7 @@
             this.gunaGroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox2.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox2.Controls.Add(this.gunaButton7);
+            this.gunaGroupBox2.Controls.Add(this.btn_hoaDon);
             this.gunaGroupBox2.Controls.Add(this.gunaButton8);
             this.gunaGroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -236,31 +236,31 @@
             this.gunaGroupBox2.Text = "Quản lí mua bán";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaButton7
+            // btn_hoaDon
             // 
-            this.gunaButton7.AnimationHoverSpeed = 0.07F;
-            this.gunaButton7.AnimationSpeed = 0.03F;
-            this.gunaButton7.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton7.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton7.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton7.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton7.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton7.Image = null;
-            this.gunaButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton7.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton7.Location = new System.Drawing.Point(55, 127);
-            this.gunaButton7.Name = "gunaButton7";
-            this.gunaButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton7.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton7.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton7.OnHoverImage = null;
-            this.gunaButton7.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton7.Size = new System.Drawing.Size(233, 42);
-            this.gunaButton7.TabIndex = 0;
-            this.gunaButton7.Text = "Quản lí hoá đơn";
-            this.gunaButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton7.Click += new System.EventHandler(this.gunaButton7_Click);
+            this.btn_hoaDon.AnimationHoverSpeed = 0.07F;
+            this.btn_hoaDon.AnimationSpeed = 0.03F;
+            this.btn_hoaDon.BaseColor = System.Drawing.Color.Silver;
+            this.btn_hoaDon.BorderColor = System.Drawing.Color.Black;
+            this.btn_hoaDon.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_hoaDon.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_hoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btn_hoaDon.Image = null;
+            this.btn_hoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_hoaDon.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_hoaDon.Location = new System.Drawing.Point(55, 127);
+            this.btn_hoaDon.Name = "btn_hoaDon";
+            this.btn_hoaDon.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_hoaDon.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_hoaDon.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_hoaDon.OnHoverImage = null;
+            this.btn_hoaDon.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_hoaDon.Size = new System.Drawing.Size(233, 42);
+            this.btn_hoaDon.TabIndex = 0;
+            this.btn_hoaDon.Text = "Quản lí hoá đơn";
+            this.btn_hoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_hoaDon.Click += new System.EventHandler(this.btn_hoaDon_Click);
             // 
             // gunaButton8
             // 
@@ -286,6 +286,7 @@
             this.gunaButton8.TabIndex = 0;
             this.gunaButton8.Text = "Quản lí khách hàng";
             this.gunaButton8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton8.Click += new System.EventHandler(this.gunaButton8_Click);
             // 
             // gunaGroupBox3
             // 
@@ -384,7 +385,7 @@
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
-        private Guna.UI.WinForms.GunaButton gunaButton7;
+        private Guna.UI.WinForms.GunaButton btn_hoaDon;
         private Guna.UI.WinForms.GunaButton gunaButton8;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox3;
         private Guna.UI.WinForms.GunaButton btn_nhanVien;

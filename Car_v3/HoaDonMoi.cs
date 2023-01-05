@@ -19,19 +19,19 @@ namespace Car_v3
         public static int check = 0;
         int id_phieuNhap_cellclick;
         int id_sanPham_cellclick;
+        public static int id_khachHang;
 
         Boolean checkthem = true;
         public HoaDonMoi()
         {
             InitializeComponent();
-            MessageBox.Show("" + PhieuNhap.id);
 
             if (help.Mo_KN_CSDL())
             {
                 HienThiDL();
                 if (HoaDonMoi.check != 1)
                 {
-                    //HienThiDl_phieuNhapMoi();
+                    HienThiDL_HoaDonMoi();
                 }
 
             }
@@ -65,6 +65,7 @@ namespace Car_v3
             cb_khachHang.DataSource = tb;
             cb_khachHang.DisplayMember = "tenKhachhnag";
             cb_khachHang.ValueMember = "maKhachHang";
+            tb_diaChiGiao.ReadOnly = false;
             
             if (HoaDon.check == 2)
             {
@@ -79,22 +80,22 @@ namespace Car_v3
 
         }
 
-        void HienThiDL_HoaDonMoi()
+       public void HienThiDL_HoaDonMoi()
         {
             string id = "";
             string query;
-
+            
             SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
             con.Open();
             SqlCommand cmd1;
             if (PhieuNhap.check == 3 || PhieuNhap.check == 2)
             {
-                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong ,SUM (thanhtienhdct) as thanhtien frOM hoadonchitiet where mahoadon = " + HoaDon.id + " GROUP BY mahoadon", con);
+                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong ,SUM (THANHTIENHDCT) as thanhtien frOM hoadonchitiet where mahoadon = " + HoaDon.id + " GROUP BY mahoadon", con);
 
             }
             else
             {
-                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong , SUM (thanhtiendhct) as thanhtien frOM hoadonchitiet where mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) GROUP BY mahoadon", con);
+                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong , SUM (THANHTIENHDCT) as thanhtien frOM hoadonchitiet where mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) GROUP BY mahoadon", con);
 
             }
 
@@ -105,23 +106,22 @@ namespace Car_v3
                 tb_thanhTien.Text = dr1.GetValue(2).ToString();
             }
 
-
+            
             if (HoaDon.check != 1)
             {
-                query = "select * from Hoadon where mahoadon = " + PhieuNhap.id + "";
+                query = "select * from Hoadon where mahoadon = " + HoaDon.id + "";
             }
             else
             {
-                query = "select max(mahoadon) from maHoaDon";
+                query = "select max(mahoadon) from HoaDon";
             }
             tb = help.LayBang(query);
             foreach (DataRow dr in tb.Rows)
             {
                 id = dr[0].ToString();
             }
-            string str = "select * from chitietnhap where maphieunhap =" + id + "";
+            string str = "select * from hoadonchitiet where mahoadon =" + HoaDon.id + "";
             tb = help.LayBang(str);
-            con.Close();
             dgv_hoaDonMoi.DataSource = tb;
 
         }
@@ -134,15 +134,24 @@ namespace Car_v3
                 SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
                 con.Open();
                 SqlCommand command = con.CreateCommand();
-                command.CommandText = "insert into phieuNhap(manhanvien,maNSX) values(" + id_nhanvien + ")";
+                id_khachHang = Convert.ToInt32(cb_khachHang.SelectedValue.ToString());
+                command.CommandText = "insert into HOADON(MAKHACHHANG,MANHANVIEN) values("+cb_khachHang.SelectedValue+","+Login.ID_STAFF+")";
                 command.ExecuteNonQuery();
                 //NSX.HienThiDL();
 
                 con.Close();
                 checkthem = false;
+
+                
             }
+            
             ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(this);
             chiTietHoaDon.ShowDialog();
+        }
+
+        private void dgv_hoaDonMoi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }      
  }

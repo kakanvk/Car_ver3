@@ -59,10 +59,16 @@ namespace Car_v3
             newPN.Show();
         }
 
-        private void gunaButton7_Click(object sender, EventArgs e)
+        private void btn_hoaDon_Click(object sender, EventArgs e)
         {
-            HoaDon hoaDon = new HoaDon();
-            hoaDon.ShowDialog();
+            HoaDon hd = new HoaDon();
+            hd.Show();
+        }
+
+        private void gunaButton8_Click(object sender, EventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            kh.Show();
         }
     }
 }
