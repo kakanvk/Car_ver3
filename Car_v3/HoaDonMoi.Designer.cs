@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ngayMua = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_huy = new Guna.UI.WinForms.GunaButton();
+            this.btn_luu = new Guna.UI.WinForms.GunaButton();
             this.dgv_hoaDonMoi = new Guna.UI.WinForms.GunaDataGridView();
             this.tb_thanhTien = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
@@ -79,55 +79,55 @@
             this.ngayMua.Text = "1/1/2023";
             this.ngayMua.Value = new System.DateTime(2023, 1, 1, 15, 51, 34, 438);
             // 
-            // gunaButton2
+            // btn_huy
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.Silver;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(787, 729);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(98, 42);
-            this.gunaButton2.TabIndex = 42;
-            this.gunaButton2.Text = "Huỷ";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_huy.AnimationHoverSpeed = 0.07F;
+            this.btn_huy.AnimationSpeed = 0.03F;
+            this.btn_huy.BaseColor = System.Drawing.Color.Silver;
+            this.btn_huy.BorderColor = System.Drawing.Color.Black;
+            this.btn_huy.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_huy.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_huy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.ForeColor = System.Drawing.Color.Black;
+            this.btn_huy.Image = null;
+            this.btn_huy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_huy.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_huy.Location = new System.Drawing.Point(787, 729);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_huy.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_huy.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_huy.OnHoverImage = null;
+            this.btn_huy.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_huy.Size = new System.Drawing.Size(98, 42);
+            this.btn_huy.TabIndex = 42;
+            this.btn_huy.Text = "Huỷ";
+            this.btn_huy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaButton1
+            // btn_luu
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(905, 729);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(94, 42);
-            this.gunaButton1.TabIndex = 41;
-            this.gunaButton1.Text = "Lưu";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.AnimationHoverSpeed = 0.07F;
+            this.btn_luu.AnimationSpeed = 0.03F;
+            this.btn_luu.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_luu.BorderColor = System.Drawing.Color.Black;
+            this.btn_luu.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_luu.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_luu.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.ForeColor = System.Drawing.Color.White;
+            this.btn_luu.Image = null;
+            this.btn_luu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_luu.Location = new System.Drawing.Point(905, 729);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_luu.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_luu.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_luu.OnHoverImage = null;
+            this.btn_luu.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_luu.Size = new System.Drawing.Size(94, 42);
+            this.btn_luu.TabIndex = 41;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgv_hoaDonMoi
             // 
@@ -473,8 +473,8 @@
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.ngayMua);
             this.Controls.Add(this.btn_them);
-            this.Controls.Add(this.gunaButton2);
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.btn_huy);
+            this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.tb_thanhTien);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.tb_diaChiGiao);
@@ -498,8 +498,8 @@
         #endregion
 
         private Guna.UI.WinForms.GunaDateTimePicker ngayMua;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btn_huy;
+        private Guna.UI.WinForms.GunaButton btn_luu;
         private Guna.UI.WinForms.GunaDataGridView dgv_hoaDonMoi;
         private Guna.UI.WinForms.GunaTextBox tb_thanhTien;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;

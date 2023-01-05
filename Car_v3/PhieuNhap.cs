@@ -18,7 +18,16 @@ namespace Car_v3
         public PhieuNhap()
         {
             InitializeComponent();
-            HienthiDL();
+
+            if (help.Mo_KN_CSDL())
+            {
+                HienthiDL();
+                
+            }
+            else
+            {
+                MessageBox.Show("kết nối dữ liệu thất bại");
+            }
         }
         public static int id;
         public static int check;
@@ -30,13 +39,14 @@ namespace Car_v3
             PhieuNhapMoi phieuNhap = new PhieuNhapMoi();
             phieuNhap.ShowDialog();
         }
-
+        int id_sanPham_cellclick;
         private void dgv_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_phieuNhap.Rows[e.RowIndex];
 
             dgv_phieuNhap.CurrentRow.Selected = true;
-            
+
+            id_sanPham_cellclick = Convert.ToInt32(row.Cells["maPhieunhap"].Value.ToString());
 
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
             if (id != 0)
@@ -56,7 +66,7 @@ namespace Car_v3
 
         public void HienthiDL()
         {
-            string str = "select * from phieunhap";
+            string str = "select * from phieunhap order by maphieunhap";
             tb = help.LayBang(str);
             dgv_phieuNhap.DataSource = tb;
             dgv_phieuNhap.AllowUserToAddRows = false;
@@ -77,10 +87,15 @@ namespace Car_v3
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            string str = "delete PHIEUNHAP where MAPHIEUNHAP ="+id+"";
+
+            string str = "delete PHIEUNHAP where MAPHIEUNHAP =" + id_sanPham_cellclick + "";
             help.CapNhatDL(str);
-            MessageBox.Show(str);
             HienthiDL();
+        }
+
+        private void tb_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            (dgv_phieuNhap.DataSource as DataTable).DefaultView.RowFilter = string.Format("MAPHIEUNHAP  LIKE '{0}%' ", tb_timKiem.Text);
         }
     }
 }

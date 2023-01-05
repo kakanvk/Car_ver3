@@ -26,7 +26,6 @@ namespace Car_v3
         public PhieuNhapMoi()
         {
             InitializeComponent();
-            MessageBox.Show("" + PhieuNhap.id);
            
             if (help.Mo_KN_CSDL())
             {
@@ -66,7 +65,17 @@ namespace Car_v3
             cb_tenNSX.DataSource = tb;
             cb_tenNSX.DisplayMember = "tenNSX";
             cb_tenNSX.ValueMember = "maNSX";
-            tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();           
+            tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();
+            if (PhieuNhap.check == 2)
+            {
+                btn_luu.Enabled = false;
+                btn_them.Enabled = false;
+                btn_xoa.Enabled = false;    
+                btn_sua.Enabled = false;
+                cb_tenNSX.Enabled = false;
+                tb_tongSoLuong.Enabled = false ;
+                tb_tongThanhTien.Enabled = false ;  
+            }
 
         }
         public void HienThiDl_phieuNhapMoi()
@@ -77,22 +86,22 @@ namespace Car_v3
             SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
             con.Open();
             SqlCommand cmd1;
-            if (PhieuNhap.check == 3)
+            if (PhieuNhap.check == 3 || PhieuNhap.check ==2)
             {
-                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap, SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where maphieunhap = "+PhieuNhap.id+" GROUP BY maphieunhap", con);
+                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap,SUM(soluongnhap) as soluong ,SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where maphieunhap = "+PhieuNhap.id+" GROUP BY maphieunhap", con);
 
             }
             else
             {
-                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap, SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where MAPHIEUNHAP = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP ) GROUP BY maphieunhap", con);
+                cmd1 = new SqlCommand("SELECT CHITIETNHAP.maphieunhap,SUM(soluongnhap) as soluong , SUM (thanhtienCTN) as thanhtien frOM CHITIETNHAP where MAPHIEUNHAP = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP ) GROUP BY maphieunhap", con);
 
             }
             
             SqlDataReader dr1 = cmd1.ExecuteReader();
             while (dr1.Read())
             {
-                tb_tongThanhTien.Text = dr1.GetValue(1).ToString();
-
+                tb_tongSoLuong.Text = dr1.GetValue(1).ToString();
+                tb_tongThanhTien.Text = dr1.GetValue(2).ToString();
             }
 
 
