@@ -136,13 +136,11 @@ namespace Car_v3
             if (PhieuNhap.check == 3)
             {
                 command.CommandText = "update phieunhap set ngayNhap ='"+ngayNhap.Value+"',thanhtiennhap = " + tb_tongThanhTien.Text + "  from phieunhap where maphieunhap =" + PhieuNhap.id + "";
-                MessageBox.Show(command.CommandText);
                 command.ExecuteNonQuery();
             }
             else
             {
-                command.CommandText = "update phieunhap set  ngayNhap ='"+ngayNhap.Value+"'  thanhtiennhap = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP )";
-                MessageBox.Show(command.CommandText);
+                command.CommandText = "update phieunhap set  ngayNhap ='"+ngayNhap.Value+"' , thanhtiennhap = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP )";
                 command.ExecuteNonQuery();
                 
             }

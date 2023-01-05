@@ -62,7 +62,6 @@ namespace Car_v3
             {
                 MessageBox.Show("Nhập đủ thông tin");
             }
-            MessageBox.Show("" + PhieuNhap.check);
             if (PhieuNhap.check == 3)
             {
                 query = "select maphieunhap from phieunhap where maphieunhap = "+PhieuNhap.id+"";

@@ -75,7 +75,7 @@ namespace Car_v3
                     //update
                     int id_xe_click = Xe.id;
                     help.Mo_KN_CSDL();
-                    string query = "update sanpham set maloai =" + cb_loaiXe.SelectedValue + ", mansx = " + cb_nsx.SelectedValue + ", tenSanPham = N'" + tb_tenSanPham.Text.Trim() + "', mota = N'" + tb_moTa.Text.Trim() + "', mau =N'" + tb_mau.Text.Trim() + "', den = N'" + tb_den.Text + "', dongCo = N'" + tb_dongCo.Text.Trim() + "', hopso = N'" + tb_hopSo.Text.Trim() + "',  soTuiKhi = " + tb_soTuiKhi.Text + " where masanpham = " + id_xe_click + ";";
+                    string query = "update sanpham set maloai =" + cb_loaiXe.SelectedValue + ",gia = "+tb_giaBan.Text+", mansx = " + cb_nsx.SelectedValue + ", tenSanPham = N'" + tb_tenSanPham.Text.Trim() + "', mota = N'" + tb_moTa.Text.Trim() + "', mau =N'" + tb_mau.Text.Trim() + "', den = N'" + tb_den.Text + "', dongCo = N'" + tb_dongCo.Text.Trim() + "', hopso = N'" + tb_hopSo.Text.Trim() + "',  soTuiKhi = " + tb_soTuiKhi.Text + " where masanpham = " + id_xe_click + ";";
                     help.CapNhatDL(query);
 
                     
@@ -196,12 +196,12 @@ namespace Car_v3
                     tb_den.Text = dr.GetValue(9).ToString();
                     tb_hopSo.Text = dr.GetValue(10).ToString();
                     tb_soTuiKhi.Text = dr.GetValue(11).ToString();
-
+                    
                     byte[] b = new byte[0];
                     b = (Byte[])(dr["anh"]);
                     MemoryStream ms = new MemoryStream(b);
                     PictureBox1.Image = Image.FromStream(ms);
-
+                    
 
                 }
 
