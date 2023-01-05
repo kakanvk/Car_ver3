@@ -79,12 +79,17 @@ namespace Car_v3
         public void HienThiDL()
         {
 
-            string str = "select maloai , tenloai as 'Tên loại' from loaixe order by maloai";
+            string str = "select maloai , tenloai  from loaixe order by maloai";
             //str = "select a.MANHANVIEN , B.TENPHANQUYEN FROM NHANVIEN AS a ,PHANQUYEN AS b where a.MAPHANQUYEN = b.MAPHANQUYEN;";
             tb = help.LayBang(str);
             dgv_loaiXe.DataSource = tb;
             dgv_loaiXe.AllowUserToAddRows = false;
             dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv_loaiXe.Columns[0].HeaderText = "Mã loại xe";
+            dgv_loaiXe.Columns[1].HeaderText = "Tên loại xe";
+            
             if (id == 0)
             {
                 btn_chiTiet.Enabled = false;
@@ -95,6 +100,13 @@ namespace Car_v3
         private void LoaiXe_Load(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void tb_timKiem_TextChanged_1(object sender, EventArgs e)
+        {
+            (dgv_loaiXe.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenloai LIKE '%{0}%'", tb_timKiem.Text);
         }
     }
 }

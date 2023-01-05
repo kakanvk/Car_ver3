@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ngayMua = new Guna.UI.WinForms.GunaDateTimePicker();
             this.btn_huy = new Guna.UI.WinForms.GunaButton();
             this.btn_luu = new Guna.UI.WinForms.GunaButton();
@@ -103,6 +103,7 @@
             this.btn_huy.TabIndex = 42;
             this.btn_huy.Text = "Huỷ";
             this.btn_huy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 
@@ -128,33 +129,34 @@
             this.btn_luu.TabIndex = 41;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // dgv_hoaDonMoi
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_hoaDonMoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgv_hoaDonMoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_hoaDonMoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_hoaDonMoi.BackgroundColor = System.Drawing.Color.White;
             this.dgv_hoaDonMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_hoaDonMoi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_hoaDonMoi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_hoaDonMoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_hoaDonMoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_hoaDonMoi.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_hoaDonMoi.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_hoaDonMoi.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_hoaDonMoi.EnableHeadersVisualStyles = false;
             this.dgv_hoaDonMoi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_hoaDonMoi.Location = new System.Drawing.Point(49, 294);
@@ -232,7 +234,7 @@
             this.tb_diaChiGiao.PasswordChar = '\0';
             this.tb_diaChiGiao.ReadOnly = true;
             this.tb_diaChiGiao.SelectedText = "";
-            this.tb_diaChiGiao.Size = new System.Drawing.Size(280, 77);
+            this.tb_diaChiGiao.Size = new System.Drawing.Size(280, 57);
             this.tb_diaChiGiao.TabIndex = 33;
             // 
             // tb_tongSoLuong
@@ -273,6 +275,7 @@
             this.gunaLabel7.Size = new System.Drawing.Size(192, 25);
             this.gunaLabel7.TabIndex = 39;
             this.gunaLabel7.Text = "Thêm khách hàng mới";
+            this.gunaLabel7.Click += new System.EventHandler(this.gunaLabel7_Click);
             // 
             // gunaLabel3
             // 
@@ -341,7 +344,7 @@
             this.tb_ghiChu.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tb_ghiChu.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_ghiChu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tb_ghiChu.Location = new System.Drawing.Point(194, 191);
+            this.tb_ghiChu.Location = new System.Drawing.Point(194, 184);
             this.tb_ghiChu.Name = "tb_ghiChu";
             this.tb_ghiChu.PasswordChar = '\0';
             this.tb_ghiChu.SelectedText = "";
@@ -423,6 +426,7 @@
             this.btn_xoa.TabIndex = 6;
             this.btn_xoa.Text = "Xoá";
             this.btn_xoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // gunaLabel1
             // 

@@ -66,6 +66,9 @@ namespace Car_v3
             cb_tenNSX.DisplayMember = "tenNSX";
             cb_tenNSX.ValueMember = "maNSX";
             tb_maNSX.Text = cb_tenNSX.SelectedValue.ToString();
+
+            tb_tongSoLuong.Enabled = false;
+            tb_tongThanhTien.Enabled = false;
             if (PhieuNhap.check == 2)
             {
                 btn_luu.Enabled = false;
@@ -73,8 +76,7 @@ namespace Car_v3
                 btn_xoa.Enabled = false;    
                 btn_sua.Enabled = false;
                 cb_tenNSX.Enabled = false;
-                tb_tongSoLuong.Enabled = false ;
-                tb_tongThanhTien.Enabled = false ;  
+                 
             }
 
         }

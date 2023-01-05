@@ -66,6 +66,7 @@
             this.btn_xoa.TabIndex = 10;
             this.btn_xoa.Text = "Xoá";
             this.btn_xoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 

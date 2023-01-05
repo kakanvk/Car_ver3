@@ -33,20 +33,23 @@ namespace Car_v3
         private void btn_chiTiet_Click(object sender, EventArgs e)
         {
             check = 2;
-            HoaDonMoi hoaDonMoi = new HoaDonMoi();
+            HoaDonMoi hoaDonMoi = new HoaDonMoi(this);
             hoaDonMoi.ShowDialog();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
             check = 3;
-            HoaDonMoi hoaDonMoi = new HoaDonMoi();
+            HoaDonMoi hoaDonMoi = new HoaDonMoi(this);
             hoaDonMoi.ShowDialog();
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
 
+            string str = "delete hoadon where mahoadon =" + id_hoaDon_cellclick + "";
+            help.CapNhatDL(str);
+            HienthiDL();
         }
         int id_hoaDon_cellclick;
         private void dgv_hoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -76,7 +79,7 @@ namespace Car_v3
         {
             id = 0;
             check = 1;
-            HoaDonMoi hoaDonMoi = new HoaDonMoi();
+            HoaDonMoi hoaDonMoi = new HoaDonMoi(this);
             hoaDonMoi.ShowDialog();
         }
     }

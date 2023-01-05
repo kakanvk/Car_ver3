@@ -103,7 +103,8 @@ namespace Car_v3
             DataGridViewRow row = this.dgv_nhanVien.Rows[e.RowIndex];
 
             dgv_nhanVien.CurrentRow.Selected = true;
-
+            dgv_nhanVien.AllowUserToAddRows = false;
+            dgv_nhanVien.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
             if (id != 0)

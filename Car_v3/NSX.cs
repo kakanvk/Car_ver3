@@ -88,5 +88,10 @@ namespace Car_v3
         {
 
         }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

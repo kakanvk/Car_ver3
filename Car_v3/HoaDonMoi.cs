@@ -17,19 +17,18 @@ namespace Car_v3
         DataTable tb = new DataTable();
         public static int id = 0;
         public static int check = 0;
-        int id_phieuNhap_cellclick;
-        int id_sanPham_cellclick;
         public static int id_khachHang;
-
+        HoaDon hoaDon;
+        int id_sanPham_cellclick;
         Boolean checkthem = true;
-        public HoaDonMoi()
+        public HoaDonMoi(HoaDon _hoaDon)
         {
             InitializeComponent();
-
+            hoaDon = _hoaDon;
             if (help.Mo_KN_CSDL())
             {
                 HienThiDL();
-                if (HoaDonMoi.check != 1)
+                if (HoaDon.check != 1)
                 {
                     HienThiDL_HoaDonMoi();
                 }
@@ -66,7 +65,8 @@ namespace Car_v3
             cb_khachHang.DisplayMember = "tenKhachhnag";
             cb_khachHang.ValueMember = "maKhachHang";
             tb_diaChiGiao.ReadOnly = false;
-            
+            tb_tongSoLuong.Enabled = false;
+            tb_thanhTien.Enabled = false;
             if (HoaDon.check == 2)
             {
                 btn_luu.Enabled = false;
@@ -74,8 +74,7 @@ namespace Car_v3
                 btn_xoa.Enabled = false;
                 btn_sua.Enabled = false;
                 cb_khachHang.Enabled = false;
-                tb_tongSoLuong.Enabled = false;
-                tb_thanhTien.Enabled = false;
+                
             }
 
         }
@@ -84,18 +83,18 @@ namespace Car_v3
         {
             string id = "";
             string query;
-            
+
             SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
             con.Open();
             SqlCommand cmd1;
-            if (PhieuNhap.check == 3 || PhieuNhap.check == 2)
+            if (HoaDon.check == 3 || HoaDon.check == 2)
             {
                 cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong ,SUM (THANHTIENHDCT) as thanhtien frOM hoadonchitiet where mahoadon = " + HoaDon.id + " GROUP BY mahoadon", con);
 
             }
             else
             {
-                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong , SUM (THANHTIENHDCT) as thanhtien frOM hoadonchitiet where mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) GROUP BY mahoadon", con);
+                cmd1 = new SqlCommand("SELECT hoadonchitiet.mahoadon,SUM(soluongmua) as soluong ,SUM (THANHTIENHDCT) as thanhtien frOM hoadonchitiet where mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) GROUP BY mahoadon", con);
 
             }
 
@@ -106,30 +105,32 @@ namespace Car_v3
                 tb_thanhTien.Text = dr1.GetValue(2).ToString();
             }
 
-            
+
             if (HoaDon.check != 1)
             {
-                query = "select * from Hoadon where mahoadon = " + HoaDon.id + "";
+                query = "select * from hoadon where mahoadon = " + HoaDon.id + "";
             }
             else
             {
-                query = "select max(mahoadon) from HoaDon";
+                query = "select max(mahoadon) from hoadon";
             }
             tb = help.LayBang(query);
             foreach (DataRow dr in tb.Rows)
             {
                 id = dr[0].ToString();
             }
-            string str = "select * from hoadonchitiet where mahoadon =" + HoaDon.id + "";
+            string str ="select * from hoadonchitiet where mahoadon =" + id + "";
             tb = help.LayBang(str);
+            con.Close();
             dgv_hoaDonMoi.DataSource = tb;
 
         }
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            check = 1;
             int id_nhanvien = Convert.ToInt32(Login.ID_STAFF);
-            if (checkthem == true && PhieuNhap.check != 3)
+            if (checkthem == true && HoaDon.check != 3)
             {
                 SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
                 con.Open();
@@ -137,9 +138,10 @@ namespace Car_v3
                 id_khachHang = Convert.ToInt32(cb_khachHang.SelectedValue.ToString());
                 command.CommandText = "insert into HOADON(MAKHACHHANG,MANHANVIEN) values("+cb_khachHang.SelectedValue+","+Login.ID_STAFF+")";
                 command.ExecuteNonQuery();
-                //NSX.HienThiDL();
+               
 
                 con.Close();
+                
                 checkthem = false;
 
                 
@@ -151,7 +153,85 @@ namespace Car_v3
 
         private void dgv_hoaDonMoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow row = this.dgv_hoaDonMoi.Rows[e.RowIndex];
 
+            dgv_hoaDonMoi.CurrentRow.Selected = true;
+
+
+            id_sanPham_cellclick = Convert.ToInt32(row.Cells["maSanPham"].Value.ToString());
+
+            if (id != 0)
+            {
+                btn_sua.Enabled = true;
+            }
+        }
+
+        private void btn_luu_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
+            con.Open();
+            SqlCommand command = con.CreateCommand();
+            if (HoaDon.check == 3)
+            {
+                command.CommandText = "update hoadon set diachigiao ='" + tb_diaChiGiao.Text+ "',ngayMua = '"+ngayMua.Value+"',ghichu = N'" + tb_ghiChu.Text + "' , thanhtienban = " + tb_thanhTien.Text + " from hoadon where mahoadon =" + HoaDon.id + "";
+            }
+            else
+            {
+                command.CommandText = "update hoadon set diachigiao ='" + tb_diaChiGiao.Text + "',ngayMua = '" + ngayMua.Value + "',ghichu = N'" + tb_ghiChu.Text + "' , thanhtienban = " + tb_thanhTien.Text + " FROM hoadon  WHERE mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) ";
+            }
+            command.ExecuteNonQuery();
+            hoaDon.HienthiDL();
+            this.Close();
+
+            con.Close();
+          
+           
+            
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
+            con.Open();
+            SqlCommand command = con.CreateCommand();
+            if (HoaDon.check == 3)
+            {
+                command.CommandText = "delete hoadonchitiet  where mahoadon =" + HoaDon.id + "";
+                command.ExecuteNonQuery();
+            }
+            else
+            {
+                command.CommandText = "delete hoadonchitiet  WHERE mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) ";
+                command.ExecuteNonQuery();
+
+                
+            }
+            if(check ==1)
+            {
+                command.CommandText = "delete hoadon  WHERE mahoadon = (   SELECT MAX(mahoadon)  FROM hoadon ) ";
+                command.ExecuteNonQuery();
+            }
+
+
+            hoaDon.HienthiDL();
+            this.Close();
+
+            con.Close();
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            string query = "delete hoadonchitiet where masanpham = " + id_sanPham_cellclick + " ";
+            help.CapNhatDL(query);
+            HienThiDL_HoaDonMoi();
+            HienThiDL();
+        }
+
+        private void gunaLabel7_Click(object sender, EventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            kh.Show();
         }
     }      
  }

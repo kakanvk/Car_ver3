@@ -107,7 +107,7 @@
             this.tb_matKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_matKhau.Location = new System.Drawing.Point(436, 310);
             this.tb_matKhau.Name = "tb_matKhau";
-            this.tb_matKhau.PasswordChar = '\0';
+            this.tb_matKhau.PasswordChar = '*';
             this.tb_matKhau.SelectedText = "";
             this.tb_matKhau.Size = new System.Drawing.Size(359, 40);
             this.tb_matKhau.TabIndex = 8;

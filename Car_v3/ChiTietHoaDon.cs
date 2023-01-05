@@ -54,7 +54,6 @@ namespace Car_v3
             {
                 id = dr[0].ToString();
             }
-            MessageBox.Show(id);
 
             str = "insert into hoadonchitiet values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongMua.Text + ","+tb_thueTruocBa.Text+","+tb_phiDangKiem.Text+","+tb_baoHiem.Text+","+tb_BCDB.Text+"," + tb_giaBan.Text + "," + tb_thanhTien.Text + ")";
             help.CapNhatDL(str);
