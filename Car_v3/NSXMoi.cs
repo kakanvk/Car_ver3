@@ -55,7 +55,7 @@ namespace Car_v3
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            if (tb_diaChi.Text == "" || tb_tenNSX.Text == "" || tb_sdt.Text == "")
+            if (tb_diaChi.Text == "" || tb_tenNSX.Text == "" || tb_sdt.Text == ""||PictureBox1.Image ==null)
             {
                 MessageBox.Show("Nhập đủ thông tin!!!");
                 return;
@@ -65,7 +65,13 @@ namespace Car_v3
             SqlCommand command = con.CreateCommand();
             var image = new ImageConverter().ConvertTo(PictureBox1.Image, typeof(byte[]));
             command.Parameters.AddWithValue("@image", image);
-            command.CommandText = "insert into nsx values(N'" + tb_tenNSX.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "'," + tb_sdt.Text.Trim() + ",@image)";
+            if(NSX.check == 3)
+            {
+                command.CommandText = "update nsx set tennsx = N'" + tb_tenNSX.Text.Trim() + "' ,diachinsx = N'" + tb_diaChi.Text.Trim() + "', sdtnsx = " + tb_sdt.Text.Trim() + ",logonsx = @image where mansx ="+NSX.id+"";
+            }
+            else
+                command.CommandText = "insert into nsx values(N'" + tb_tenNSX.Text.Trim() + "',N'" + tb_diaChi.Text.Trim() + "'," + tb_sdt.Text.Trim() + ",@image)";
+
             command.ExecuteNonQuery();
             if(NSX!=null) NSX.HienThiDL();
             if(xeMoi!=null) xeMoi.renderCbbNSX();
@@ -92,6 +98,7 @@ namespace Car_v3
                     tb_tenNSX.Text = dr.GetValue(1).ToString();
                     tb_diaChi.Text = dr.GetValue(2).ToString();
                     tb_sdt.Text = dr.GetValue(3).ToString();
+
                     byte[] b = new byte[0];
                     b = (Byte[])(dr["logoNSX"]);
                     MemoryStream ms = new MemoryStream(b);

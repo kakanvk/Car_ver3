@@ -19,8 +19,9 @@ namespace Car_v3
         DataTable tb = new DataTable();
         public static int id =0;
         public static int check = 0;
-        int id_phieuNhap_cellclick;
-        int id_sanPham_cellclick;
+        public static int id_phieuNhap_cellclick;
+        public static int id_sanPham_cellclick;
+        int so_luong_san_pham_nhap;
         PhieuNhap pn;
 
         Boolean checkthem = true;
@@ -126,6 +127,8 @@ namespace Car_v3
             tb = help.LayBang(str);
             con.Close();
             dgv_phieuNhapMoi.DataSource = tb;
+            dgv_phieuNhapMoi.AllowUserToAddRows = false;
+            dgv_phieuNhapMoi.EditMode = DataGridViewEditMode.EditProgrammatically;
 
         }
         private void btn_luu_Click(object sender, EventArgs e)
@@ -136,13 +139,11 @@ namespace Car_v3
             if (PhieuNhap.check == 3)
             {
                 command.CommandText = "update phieunhap set ngayNhap ='"+ngayNhap.Value+"',thanhtiennhap = " + tb_tongThanhTien.Text + "  from phieunhap where maphieunhap =" + PhieuNhap.id + "";
-                MessageBox.Show(command.CommandText);
                 command.ExecuteNonQuery();
             }
             else
             {
-                command.CommandText = "update phieunhap set  ngayNhap ='"+ngayNhap.Value+"'  thanhtiennhap = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP )";
-                MessageBox.Show(command.CommandText);
+                command.CommandText = "update phieunhap set  ngayNhap ='"+ngayNhap.Value+"',  thanhtiennhap = " + tb_tongThanhTien.Text + " from phieunhap where maphieunhap = (   SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP )";
                 command.ExecuteNonQuery();
                 
             }
@@ -156,6 +157,7 @@ namespace Car_v3
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            check = 1;
             if(tb_maNSX.Text == "")
             {
                 MessageBox.Show("Chọn nhà sản xuất");
@@ -185,8 +187,11 @@ namespace Car_v3
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + " ";
+            string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + "and maphieunhap = "+id_phieuNhap_cellclick+"";
             help.CapNhatDL(query);
+            string str = "update sanpham set soluong = SOLUONG - " +so_luong_san_pham_nhap  + "  where  MASANPHAM  = " + id_sanPham_cellclick+ "" ;
+            MessageBox.Show(str);
+            help.CapNhatDL(str);
             HienThiDl_phieuNhapMoi();
             HienThiDL();
             
@@ -200,8 +205,8 @@ namespace Car_v3
 
 
             id_sanPham_cellclick = Convert.ToInt32(row.Cells["maSanPham"].Value.ToString());
-            id_phieuNhap_cellclick = Convert.ToInt32(row.Cells["maSanPham"].Value.ToString());
-
+            id_phieuNhap_cellclick = Convert.ToInt32(row.Cells["maPhieuNhap"].Value.ToString());
+            so_luong_san_pham_nhap = Convert.ToInt32(row.Cells["soluongnhap"].Value.ToString());
             if (id != 0)
             {
                 btn_sua.Enabled = true;
@@ -210,8 +215,30 @@ namespace Car_v3
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            check = 3;
             ChiTietPhieuNhap phieuNhap = new ChiTietPhieuNhap(this);
             phieuNhap.ShowDialog();
+        }
+
+        private void lb_themNSX_Click(object sender, EventArgs e)
+        {
+            NSX nSX = new NSX();    
+            nSX.ShowDialog();
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            if(PhieuNhap.check == 1)
+            {
+                string str = "update  sanpham set SOLUONG = SOLUONG - CHITIETNHAP.SOLUONGNHAP from sanpham, CHITIETNHAP where SANPHAM.MASANPHAM = CHITIETNHAP.MASANPHAM and maphieunhap = ( SELECT MAX(MAPHIEUNHAP)  FROM PHIEUNHAP)";
+                help.CapNhatDL(str);
+                pn.HienthiDL();
+                this.Close();
+            }
+            if(PhieuNhap.check != 1)
+            {
+                this.Close();
+            }
         }
     }
     

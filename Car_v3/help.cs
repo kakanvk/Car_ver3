@@ -41,15 +41,18 @@ namespace Car_v3
                 return false;
             }
         }
-        public void CapNhatDL(string str)
+        public  int CapNhatDL(string str)
         {
             try
             {
                 lenh = new SqlCommand(str, kn);
-                lenh.ExecuteNonQuery();
+               return lenh.ExecuteNonQuery();
 
             }
-            catch { }
+            catch { 
+                return 0;
+            }
+            
         }
         public DataTable LayBang(string str)
         {

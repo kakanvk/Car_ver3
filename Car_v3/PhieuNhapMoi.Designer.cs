@@ -101,6 +101,7 @@
             this.btn_huy.TabIndex = 24;
             this.btn_huy.Text = "Huỷ";
             this.btn_huy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 
@@ -307,6 +308,7 @@
             this.lb_themNSX.Size = new System.Drawing.Size(208, 25);
             this.lb_themNSX.TabIndex = 21;
             this.lb_themNSX.Text = "Thêm nhà sản xuất khác";
+            this.lb_themNSX.Click += new System.EventHandler(this.lb_themNSX_Click);
             // 
             // gunaLabel3
             // 
@@ -439,7 +441,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 696);
+            this.ClientSize = new System.Drawing.Size(1023, 679);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.dgv_phieuNhapMoi);
             this.Controls.Add(this.ngayNhap);

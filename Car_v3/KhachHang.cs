@@ -80,5 +80,10 @@ namespace Car_v3
             (dgv_khachHang.DataSource as DataTable).DefaultView.RowFilter = string.Format("tenkhachhang LIKE '%{0}%' or diachiKhachhang like '%{0}%'", tb_timKiem.Text);
 
         }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

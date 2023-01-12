@@ -55,7 +55,11 @@ namespace Car_v3
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             string query = "delete sanpham where masanpham = " + id + "";
-            help.CapNhatDL(query);
+            if (help.CapNhatDL(query) == 0)
+            {
+                MessageBox.Show("Sản phẩm có tồn trong hóa đơn !");
+                return;
+            }
 
             HienThiDL();
         }

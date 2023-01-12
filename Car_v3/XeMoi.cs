@@ -42,53 +42,33 @@ namespace Car_v3
         {
 
         }
+        string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            try
+            if (tb_hopSo.Text == "" || tb_giaBan.Text == "" || tb_tenSanPham.Text == ""||PictureBox1.Image == null)
             {
-                string str = "Data Source=.;Integrated Security = True; Initial Catalog = Oto";
-                if (Xe.check == 1)
-                {
-                    SqlConnection con = new SqlConnection(str);
-                    con.Open();
-                    SqlCommand command = con.CreateCommand();
-                    var image = new ImageConverter().ConvertTo(PictureBox1.Image, typeof(byte[]));
-                    command.Parameters.AddWithValue("@image", image);
-
-                    //command.CommandText = "insert into sanpham values (" + cb_nsx.SelectedValue + "," + cb_loaiXe.SelectedValue + ", N'" + tb_tenSanPham.Text.Trim() + "', N'" + tb_moTa.Text.Trim() + "', N'" + tb_mau.Text.Trim() + "', " + tb_giaBan.Text + ", @image" + ", N'" + tb_dongCo.Text.Trim() + "',N'" + tb_den.Text.Trim() + "',N'" + tb_hopSo.Text.Trim() + "'," + tb_soTuiKhi.Text + "'," + tb_soTuiKhi.Text + ")";
-
-                    command.CommandText = "insert into sanpham(maloai, mansx, tensanpham, mota, mau, den, dongco, hopso, soluong, sotuikhi, gia,anh) values(" + cb_loaiXe.SelectedValue + "," + cb_nsx.SelectedValue + ", N'" + tb_tenSanPham.Text.Trim() + "', N'" + tb_moTa.Text.Trim() + "', N'" + tb_mau.Text + "', N'" + tb_den.Text.Trim() + "', N'" + tb_dongCo.Text + "', N'" + tb_hopSo.Text.Trim() + "', " + 0 + ", " + tb_soTuiKhi.Text + ", " + tb_giaBan.Text + ",@image)";
-
-                    //command.CommandText = "insert into sanpham(maloai, mansx, tensanpham, mota, mau, den, dongco, hopso, soluong, sotuikhi, gia) values(1,2, N'A', N'sdgg', N'Đỏ', N'Đỏ', N'2 thì', N'2', 0, 2, 2)";
-
-                    command.ExecuteNonQuery();
-                    
-                    if (xe!=null) xe.HienThiDL();
-                    con.Close();
-                    this.Close();
-                }
-
-                else if (Xe.check == 3)
-                {
-
-                    //update
-                    int id_xe_click = Xe.id;
-                    help.Mo_KN_CSDL();
-                    string query = "update sanpham set maloai =" + cb_loaiXe.SelectedValue + ", mansx = " + cb_nsx.SelectedValue + ", tenSanPham = N'" + tb_tenSanPham.Text.Trim() + "', mota = N'" + tb_moTa.Text.Trim() + "', mau =N'" + tb_mau.Text.Trim() + "', den = N'" + tb_den.Text + "', dongCo = N'" + tb_dongCo.Text.Trim() + "', hopso = N'" + tb_hopSo.Text.Trim() + "',  soTuiKhi = " + tb_soTuiKhi.Text + " where masanpham = " + id_xe_click + ";";
-                    help.CapNhatDL(query);
-
-                    
-
-                    xe.HienThiDL();
-                    this.Close();
-                }
+                MessageBox.Show("Nhập đủ thông tin!!!");
+                return;
             }
-            catch
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
+            con.Open();
+            SqlCommand command = con.CreateCommand();
+            var image = new ImageConverter().ConvertTo(PictureBox1.Image, typeof(byte[]));
+            command.Parameters.AddWithValue("@image", image);
+            if (Xe.check == 3)
             {
-
+                command.CommandText = "update sanpham set maloai = N'" + cb_loaiXe.SelectedValue + "' ,tensanpham = N'" + tb_tenSanPham.Text.Trim() + "', mota = N'" + tb_moTa.Text.Trim() + "',mau = N'"+tb_mau.Text.Trim()+"',gia = "+tb_giaBan.Text+",dongco = N'"+tb_dongCo.Text.Trim()+"',den = N'"+tb_den.Text.Trim()+"',hopso = N'"+tb_hopSo.Text.Trim()+"',sotuikhi = "+tb_soTuiKhi.Text+", anh = @image where masanpham =" + Xe.id + "";
             }
+            else
+                command.CommandText = "insert into sanpham(maloai, mansx, tensanpham, mota, mau, den, dongco, hopso, soluong, sotuikhi, gia,anh) values(" + cb_loaiXe.SelectedValue + "," + cb_nsx.SelectedValue + ", N'" + tb_tenSanPham.Text.Trim() + "', N'" + tb_moTa.Text.Trim() + "', N'" + tb_mau.Text + "', N'" + tb_den.Text.Trim() + "', N'" + tb_dongCo.Text + "', N'" + tb_hopSo.Text.Trim() + "', " + 0 + ", " + tb_soTuiKhi.Text + ", " + tb_giaBan.Text + ",@image)";
+
+            command.ExecuteNonQuery();
+            xe.HienThiDL();
+            this.Close();
+            con.Close();
         }
+    
 
         private void btn_chonAnh_Click(object sender, EventArgs e)
         {
@@ -102,10 +82,12 @@ namespace Car_v3
 
         void HienThiDL()
         {
-            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = Oto");
-            string str;
-            int id_xe_click = Xe.id;
+            SqlConnection con = new SqlConnection(str);
+            int id_xe_click =Xe.id;
             con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM sanpham where masanpham = @id", con);
+            cmd.Parameters.AddWithValue("@id", id_xe_click);
+            SqlDataReader dr = cmd.ExecuteReader();
 
             if (Xe.check == 1)
             {
@@ -128,12 +110,9 @@ namespace Car_v3
 
             }
 
-            else if(Xe.check ==2)
+            else 
+            if (Xe.check == 2)
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM sanpham where masanpham = @id", con);
-                cmd.Parameters.AddWithValue("@id", id_xe_click);
-                SqlDataReader dr = cmd.ExecuteReader();
-
                 while (dr.Read())
                 {
                     tb_tenSanPham.Text = dr.GetValue(3).ToString();
@@ -182,10 +161,6 @@ namespace Car_v3
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM sanpham where masanpham = @id", con);
-                cmd.Parameters.AddWithValue("@id", id_xe_click);
-                SqlDataReader dr = cmd.ExecuteReader();
-
                 while (dr.Read())
                 {
                     tb_tenSanPham.Text = dr.GetValue(3).ToString();
@@ -196,7 +171,6 @@ namespace Car_v3
                     tb_den.Text = dr.GetValue(9).ToString();
                     tb_hopSo.Text = dr.GetValue(10).ToString();
                     tb_soTuiKhi.Text = dr.GetValue(11).ToString();
-
                     byte[] b = new byte[0];
                     b = (Byte[])(dr["anh"]);
                     MemoryStream ms = new MemoryStream(b);

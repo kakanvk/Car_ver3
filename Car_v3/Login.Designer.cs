@@ -126,7 +126,7 @@
             this.tb_tenDangNhap.PasswordChar = '\0';
             this.tb_tenDangNhap.SelectedText = "";
             this.tb_tenDangNhap.Size = new System.Drawing.Size(359, 40);
-            this.tb_tenDangNhap.TabIndex = 9;
+            this.tb_tenDangNhap.TabIndex = 7;
             // 
             // gunaLabel4
             // 

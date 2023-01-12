@@ -42,7 +42,7 @@ namespace Car_v3
         
         public void HienThiDL()
         {
-            string str = "select * from nsx";
+            string str = "select * from nsx order by mansx";
             tb = help.LayBang(str);
             dgv_NSX.DataSource = tb;
             dgv_NSX.AllowUserToAddRows = false;
@@ -91,8 +91,16 @@ namespace Car_v3
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-
+            
+            string query = "delete nsx where mansx = " + id + "";
+            if(help.CapNhatDL(query) == 0)
+            {
+                MessageBox.Show("Nhà sản xuất có tồn tại sản phẩm !");
+                return;
+            }
+            HienThiDL();
         }
+    
 
         private void tb_timKiem_TextChanged(object sender, EventArgs e)
         {

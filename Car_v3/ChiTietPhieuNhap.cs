@@ -43,13 +43,26 @@ namespace Car_v3
         {
             string str;
 
-            str = "select * from sanpham";
+            if(PhieuNhapMoi.check != 3)
+            {
+                str = "select * from sanpham";
 
-            tb = help.LayBang(str);
-            cb_tenSanPham.DataSource = tb;
-            cb_tenSanPham.DisplayMember = "tensanpham";
-            cb_tenSanPham.ValueMember = "masanpham";
-            tb_thanhTien.Enabled = false;
+                tb = help.LayBang(str);
+                cb_tenSanPham.DataSource = tb;
+                cb_tenSanPham.DisplayMember = "tensanpham";
+                cb_tenSanPham.ValueMember = "masanpham";
+                tb_thanhTien.Enabled = false;
+            }
+            else
+            {
+                str = "select * from sanpham where masanpham = "+PhieuNhapMoi.id_sanPham_cellclick+"";
+
+                tb = help.LayBang(str);
+                cb_tenSanPham.DataSource = tb;
+                cb_tenSanPham.DisplayMember = "tensanpham";
+                cb_tenSanPham.ValueMember = "masanpham";
+                tb_thanhTien.Enabled = false;
+            }
            
         }
 
@@ -62,7 +75,6 @@ namespace Car_v3
             {
                 MessageBox.Show("Nhập đủ thông tin");
             }
-            MessageBox.Show("" + PhieuNhap.check);
             if (PhieuNhap.check == 3)
             {
                 query = "select maphieunhap from phieunhap where maphieunhap = "+PhieuNhap.id+"";
@@ -79,9 +91,29 @@ namespace Car_v3
                 id = dr[0].ToString();
             }
             
-            str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
-            help.CapNhatDL(str);
-            
+            if(PhieuNhapMoi.check != 3)
+            {
+                str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
+                help.CapNhatDL(str);
+
+                str = "update sanpham set sanpham.soluong = sanpham.SOLUONG  + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.MASANPHAM  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + PhieuNhapMoi.id_phieuNhap_cellclick + "";
+                MessageBox.Show(str);
+                help.CapNhatDL(str);
+            }
+            else
+            {
+                str = "update sanpham set sanpham.soluong = sanpham.SOLUONG - chitietnhap.soluongnhap + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.MASANPHAM  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + PhieuNhapMoi.id_phieuNhap_cellclick + "";
+                MessageBox.Show(str);
+                help.CapNhatDL(str);
+
+
+                str = "update chitietnhap set masanpham =  " + cb_tenSanPham.SelectedValue + ",maphieunhap = " + id + ",soluongnhap = " + tb_soLuongNhap.Text + ",gianhap = " + tb_giaNhap.Text + ",thanhtienctn = " + tb_thanhTien.Text + " where masanpham ="+PhieuNhapMoi.id_sanPham_cellclick+" and maphieunhap = "+PhieuNhapMoi.id_phieuNhap_cellclick+"";
+                MessageBox.Show(str);
+                help.CapNhatDL(str);
+               
+            }
+            // soluong sản phẩm
+           
             pnm.HienThiDl_phieuNhapMoi();
             this.Close();
 
