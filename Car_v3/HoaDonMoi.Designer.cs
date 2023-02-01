@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ngayMua = new Guna.UI.WinForms.GunaDateTimePicker();
             this.btn_huy = new Guna.UI.WinForms.GunaButton();
             this.btn_luu = new Guna.UI.WinForms.GunaButton();
@@ -53,6 +53,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.tb_tenNhanVien = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.btn_In = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDonMoi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,30 +134,30 @@
             // 
             // dgv_hoaDonMoi
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgv_hoaDonMoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_hoaDonMoi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_hoaDonMoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_hoaDonMoi.BackgroundColor = System.Drawing.Color.White;
             this.dgv_hoaDonMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_hoaDonMoi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_hoaDonMoi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_hoaDonMoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_hoaDonMoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_hoaDonMoi.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_hoaDonMoi.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_hoaDonMoi.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_hoaDonMoi.EnableHeadersVisualStyles = false;
             this.dgv_hoaDonMoi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_hoaDonMoi.Location = new System.Drawing.Point(49, 294);
@@ -465,11 +466,38 @@
             this.gunaLabel4.TabIndex = 46;
             this.gunaLabel4.Text = "Tên nhân viên";
             // 
+            // btn_In
+            // 
+            this.btn_In.AnimationHoverSpeed = 0.07F;
+            this.btn_In.AnimationSpeed = 0.03F;
+            this.btn_In.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_In.BorderColor = System.Drawing.Color.Black;
+            this.btn_In.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_In.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_In.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_In.ForeColor = System.Drawing.Color.White;
+            this.btn_In.Image = null;
+            this.btn_In.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_In.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_In.Location = new System.Drawing.Point(483, 484);
+            this.btn_In.Name = "btn_In";
+            this.btn_In.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_In.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_In.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_In.OnHoverImage = null;
+            this.btn_In.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_In.Size = new System.Drawing.Size(94, 42);
+            this.btn_In.TabIndex = 47;
+            this.btn_In.Text = "In";
+            this.btn_In.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
+            // 
             // HoaDonMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 737);
+            this.Controls.Add(this.btn_In);
             this.Controls.Add(this.tb_tenNhanVien);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel1);
@@ -494,6 +522,7 @@
             this.Controls.Add(this.gunaLabel9);
             this.Name = "HoaDonMoi";
             this.Text = "HoaDonMoi";
+            this.Load += new System.EventHandler(this.HoaDonMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDonMoi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -524,5 +553,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox tb_tenNhanVien;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaButton btn_In;
     }
 }

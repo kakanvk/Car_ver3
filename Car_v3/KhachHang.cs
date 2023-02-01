@@ -83,7 +83,14 @@ namespace Car_v3
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            string str = "delete khachhang where maKhachHang =" + id + "";
+            if (help.CapNhatDL(str) == 0)
+            {
+                MessageBox.Show("Khách hàng đã mua sản phẩm !");
+                return;
+            }
 
+            HienThiDL();
         }
     }
 }

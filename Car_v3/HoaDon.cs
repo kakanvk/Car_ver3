@@ -89,6 +89,8 @@ namespace Car_v3
             HienthiDL();
         }
 
+       
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             id = 0;

@@ -233,6 +233,17 @@ namespace Car_v3
             KhachHang kh = new KhachHang();
             kh.Show();
         }
+
+        private void btn_In_Click(object sender, EventArgs e)
+        {
+            InHoaDon hd = new InHoaDon(HoaDon.id);
+            hd.Show();
+        }
+
+        private void HoaDonMoi_Load(object sender, EventArgs e)
+        {
+
+        }
     }      
  }
 

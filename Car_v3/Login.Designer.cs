@@ -111,6 +111,7 @@
             this.tb_matKhau.SelectedText = "";
             this.tb_matKhau.Size = new System.Drawing.Size(359, 40);
             this.tb_matKhau.TabIndex = 8;
+            this.tb_matKhau.Text = "admin";
             // 
             // tb_tenDangNhap
             // 
@@ -127,6 +128,7 @@
             this.tb_tenDangNhap.SelectedText = "";
             this.tb_tenDangNhap.Size = new System.Drawing.Size(359, 40);
             this.tb_tenDangNhap.TabIndex = 7;
+            this.tb_tenDangNhap.Text = "admin";
             // 
             // gunaLabel4
             // 
