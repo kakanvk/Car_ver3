@@ -104,7 +104,7 @@ namespace Car_v3
                     while (dr.Read())
                     {
                         tb_tenNhanVien.Text = dr.GetValue(2).ToString();
-                        ns_nhanVien.Value = DateTime.Parse(dr.GetValue(3).ToString());
+                        ns_nhanVien.Value =   DateTime.Parse(dr.GetValue(3).ToString());
                         cb_gioiTinh.Text = dr.GetValue(4).ToString();
                         tb_sdt.Text = dr.GetValue(5).ToString();
                         tb_matKhau.Text = dr.GetValue(6).ToString();

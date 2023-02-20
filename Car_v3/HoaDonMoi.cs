@@ -19,7 +19,7 @@ namespace Car_v3
         public static int check = 0;
         public static int id_khachHang;
         HoaDon hoaDon;
-        int id_sanPham_cellclick;
+        public static int id_sanPham_cellclick;
         Boolean checkthem = true;
         public HoaDonMoi(HoaDon _hoaDon)
         {
@@ -243,6 +243,13 @@ namespace Car_v3
         private void HoaDonMoi_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            check = 3;
+            ChiTietHoaDon hd = new ChiTietHoaDon(this);
+            hd.ShowDialog();
         }
     }      
  }

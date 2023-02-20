@@ -86,7 +86,6 @@ namespace Car_v3
             dgv_loaiXe.AllowUserToAddRows = false;
             dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-            dgv_loaiXe.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgv_loaiXe.Columns[0].HeaderText = "Mã loại xe";
             dgv_loaiXe.Columns[1].HeaderText = "Tên loại xe";
             

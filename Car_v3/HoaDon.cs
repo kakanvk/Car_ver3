@@ -13,6 +13,7 @@ namespace Car_v3
 {
     public partial class HoaDon : Form
     {
+        public static int id_hoaDon_cellclick;
         public static int id, check;
         help help = new help();
         DataTable tb = new DataTable();
@@ -46,7 +47,7 @@ namespace Car_v3
         }
 
         
-        int id_hoaDon_cellclick;
+        
         private void dgv_hoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_hoaDon.Rows[e.RowIndex];
@@ -82,7 +83,7 @@ namespace Car_v3
             string str = "delete hoadon where mahoadon =" + id_hoaDon_cellclick + "";
             if (help.CapNhatDL(str) == 0)
             {
-                MessageBox.Show("Nhà sản xuất có tồn tại sản phẩm !");
+                MessageBox.Show("Hóa đơn có sản phẩm được bán !");
                 return;
             }
             

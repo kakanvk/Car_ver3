@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace Car_v3
 {
     public partial class PhieuNhap : Form
     {
-
+        public static int id_phieuNhap_cellclick;
         help help = new help();
         DataTable tb = new DataTable();
         public PhieuNhap()
@@ -39,7 +40,6 @@ namespace Car_v3
             PhieuNhapMoi phieuNhap = new PhieuNhapMoi(this);
             phieuNhap.ShowDialog();
         }
-        int id_phieuNhap_cellclick;
         private void dgv_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dgv_phieuNhap.Rows[e.RowIndex];
@@ -88,9 +88,17 @@ namespace Car_v3
         private void btn_xoa_Click(object sender, EventArgs e)
         {
 
-            string str = "delete PHIEUNHAP where MAPHIEUNHAP =" + id_phieuNhap_cellclick + "";
-            help.CapNhatDL(str);
-            HienthiDL();
+            if (MessageBox.Show("Bạn có muốn xóa không", "Title", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+               
+                    string str = "delete PHIEUNHAP where MAPHIEUNHAP =" + id_phieuNhap_cellclick + "";
+                if (help.CapNhatDL(str) <= 0)
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+                
+                    HienthiDL();
+            }
         }
 
         private void tb_timKiem_TextChanged(object sender, EventArgs e)

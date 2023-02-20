@@ -187,14 +187,17 @@ namespace Car_v3
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + "and maphieunhap = "+id_phieuNhap_cellclick+"";
-            help.CapNhatDL(query);
-            string str = "update sanpham set soluong = SOLUONG - " +so_luong_san_pham_nhap  + "  where  MASANPHAM  = " + id_sanPham_cellclick+ "" ;
-            MessageBox.Show(str);
-            help.CapNhatDL(str);
-            HienThiDl_phieuNhapMoi();
-            HienThiDL();
             
+            if (MessageBox.Show("Bạn có muốn xóa không", "Title", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                string query = "delete chitietnhap where masanpham = " + id_sanPham_cellclick + "and maphieunhap = " + id_phieuNhap_cellclick + "";
+                help.CapNhatDL(query);
+                string str = "update sanpham set soluong = SOLUONG - " + so_luong_san_pham_nhap + "  where  MASANPHAM  = " + id_sanPham_cellclick + "";
+                help.CapNhatDL(str);
+                HienThiDl_phieuNhapMoi();
+                HienThiDL();
+            }
+
         }
 
         private void dgv_phieuNhap_CellClick_1(object sender, DataGridViewCellEventArgs e)

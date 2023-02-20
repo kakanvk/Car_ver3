@@ -66,10 +66,40 @@ namespace Car_v3
            
         }
 
+        private bool kiemtratontai()
+        {
+            bool tatkt = false;
+            int test = PhieuNhapMoi.id_sanPham_cellclick;
+            SqlConnection con = new SqlConnection("Data Source=.;Integrated Security = True; Initial Catalog = oto");
+            con.Open();
+            DataTable dt_kiemtra = new DataTable();
+            if (PhieuNhap.check == 3)
+            {
+                SqlDataAdapter da_kiemtra = new SqlDataAdapter("Select * from chitietnhap  where masanpham=" + test + " and  maphieunhap = (select max(maphieunhap) from phieunhap )", con);
+                da_kiemtra.Fill(dt_kiemtra);
+                if (dt_kiemtra.Rows.Count > 0)
+                {
+                    tatkt = true;
+                }
+                da_kiemtra.Dispose();
+            }
+            else
+            {
+                SqlDataAdapter da_kiemtra = new SqlDataAdapter("Select * from chitietnhap  where masanpham=" + test + " and  maphieunhap = " + PhieuNhap.id_phieuNhap_cellclick + "", con);
+                da_kiemtra.Fill(dt_kiemtra);
+                if (dt_kiemtra.Rows.Count > 0)
+                {
+                    tatkt = true;
+                }
+                da_kiemtra.Dispose();
+            }
+            return tatkt;
+        }
+
         private void btn_luu_Click(object sender, EventArgs e)
         {
             string id = "";
-            string str ="";
+            string str, str1;
             string query = "";
             if(tb_giaNhap.Text == "" || tb_soLuongNhap.Text == "" || cb_tenSanPham.Text == "")
             {
@@ -85,35 +115,41 @@ namespace Car_v3
             }
 
 
+
             tb = help.LayBang(query);
             foreach (DataRow dr in tb.Rows)
             {
                 id = dr[0].ToString();
             }
-            
-            if(PhieuNhapMoi.check != 3)
-            {
-                str = "insert into chitietnhap values(" + cb_tenSanPham.SelectedValue + "," + id + "," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
-                help.CapNhatDL(str);
 
-                str = "update sanpham set sanpham.soluong = sanpham.SOLUONG  + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.MASANPHAM  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + PhieuNhapMoi.id_phieuNhap_cellclick + "";
-                MessageBox.Show(str);
-                help.CapNhatDL(str);
+            if (PhieuNhapMoi.check == 3)
+            {
+                str = "update  chitietnhap set soluongnhap = " + tb_soLuongNhap.Text + ", gianhap = " + tb_giaNhap.Text + ",thanhtienctn = "+tb_thanhTien.Text+" where masanpham = " + cb_tenSanPham.SelectedValue + "and maphieunhap = " + PhieuNhap.id_phieuNhap_cellclick + "";
+
             }
             else
             {
-                str = "update sanpham set sanpham.soluong = sanpham.SOLUONG - chitietnhap.soluongnhap + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.MASANPHAM  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + PhieuNhapMoi.id_phieuNhap_cellclick + "";
-                MessageBox.Show(str);
-                help.CapNhatDL(str);
+                str = "insert into chitietnhap values( " + cb_tenSanPham.SelectedValue + ",(select max(maphieunhap) from phieunhap)," + tb_soLuongNhap.Text + "," + tb_giaNhap.Text + "," + tb_thanhTien.Text + ")";
 
-
-                str = "update chitietnhap set masanpham =  " + cb_tenSanPham.SelectedValue + ",maphieunhap = " + id + ",soluongnhap = " + tb_soLuongNhap.Text + ",gianhap = " + tb_giaNhap.Text + ",thanhtienctn = " + tb_thanhTien.Text + " where masanpham ="+PhieuNhapMoi.id_sanPham_cellclick+" and maphieunhap = "+PhieuNhapMoi.id_phieuNhap_cellclick+"";
-                MessageBox.Show(str);
-                help.CapNhatDL(str);
-               
             }
-            // soluong sản phẩm
-           
+            // sl xe
+            if (kiemtratontai())
+            {
+                str1 = "update sanpham set sanpham.soluong = sanpham.soluong - chitietnhap.soluongnhap + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.masanpham  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + id+"";
+                help.CapNhatDL(str1);
+
+            }
+            else
+            {
+                str1 = "update sanpham set sanpham.soluong = sanpham.soluong  + " + tb_soLuongNhap.Text + " from sanpham, chitietnhap  where  sanpham.masanpham  = " + cb_tenSanPham.SelectedValue + " and chitietnhap.maphieunhap = " + id  + "";
+                help.CapNhatDL(str1);
+            }
+
+            if (help.CapNhatDL(str) > 0 )
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+
             pnm.HienThiDl_phieuNhapMoi();
             this.Close();
 
